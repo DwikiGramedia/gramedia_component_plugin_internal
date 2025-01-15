@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:papilus_component_gramedia/GramediaComponent.dart';
+import 'package:papilus_component_gramedia/v2/foundation/foundation.dart';
 
 class SLTextField extends HookWidget {
   const SLTextField({
@@ -39,7 +39,7 @@ class SLTextField extends HookWidget {
   final Function(String?)? onFieldSubmitted;
   final VoidCallback? onTap;
   final List<TextInputFormatter>? inputFormatters;
-  final GramediaColor? textColor;
+  final Color? textColor;
   final Widget? suffix;
   final Widget? suffixIcon;
   final Widget? prefix;
@@ -70,10 +70,8 @@ class SLTextField extends HookWidget {
       onFieldSubmitted: onFieldSubmitted,
       autovalidateMode:
           autovalidateMode ? AutovalidateMode.onUserInteraction : null,
-      style: TypographyHelper().getValue(
-        UrbanistFont.mobile_text_m_medium,
-        ColorHelper().getColor(textColor ?? GramediaColor.neutral700),
-        false,
+      style: SmartlibFont.bodyMMedium.copyWith(
+        color: textColor ?? SmartlibColors.neutral700,
       ),
       decoration: InputDecoration(
         labelText: labelText,
@@ -82,59 +80,41 @@ class SLTextField extends HookWidget {
         prefix: prefix,
         prefixIcon: prefixIcon,
         errorText: errorText,
-        errorStyle: TypographyHelper().getValue(
-          UrbanistFont.mobile_text_xs_medium,
-          ColorHelper().getColor(GramediaColor.red500),
-          false,
+        errorStyle: SmartlibFont.bodyXSMedium.copyWith(
+          color: SmartlibColors.red500,
         ),
         errorMaxLines: 3,
-        labelStyle: TypographyHelper().getValue(
-          UrbanistFont.mobile_text_m_medium,
-          ColorHelper().getColor(textColor ?? GramediaColor.neutral700),
-          false,
+        labelStyle: SmartlibFont.bodyMMedium.copyWith(
+          color: textColor ?? SmartlibColors.neutral700,
         ),
         disabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(
-            color: ColorHelper().getColor(GramediaColor.neutral200),
-          ),
-          borderRadius: BorderRadius.circular(
-            RadiusHelper().radius(RadiusCase.radius_S),
-          ),
+          borderSide: const BorderSide(color: SmartlibColors.neutral200),
+          borderRadius: BorderRadius.circular(SmartlibRadius.rS),
         ),
         focusedErrorBorder: OutlineInputBorder(
-          borderSide:
-              BorderSide(color: ColorHelper().getColor(GramediaColor.red500)),
-          borderRadius: BorderRadius.circular(
-            RadiusHelper().radius(RadiusCase.radius_S),
-          ),
+          borderSide: const BorderSide(color: SmartlibColors.red500),
+          borderRadius: BorderRadius.circular(SmartlibRadius.rS),
         ),
         errorBorder: OutlineInputBorder(
-          borderSide:
-              BorderSide(color: ColorHelper().getColor(GramediaColor.red500)),
-          borderRadius: BorderRadius.circular(
-            RadiusHelper().radius(RadiusCase.radius_S),
-          ),
+          borderSide: const BorderSide(color: SmartlibColors.red500),
+          borderRadius: BorderRadius.circular(SmartlibRadius.rS),
         ),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
             color: isPasswordError
-                ? ColorHelper().getColor(GramediaColor.red500)
-                : ColorHelper().getColor(GramediaColor.neutral700),
+                ? SmartlibColors.red500
+                : SmartlibColors.neutral700,
             width: 2,
           ),
-          borderRadius: BorderRadius.circular(
-            RadiusHelper().radius(RadiusCase.radius_S),
-          ),
+          borderRadius: BorderRadius.circular(SmartlibRadius.rS),
         ),
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(
             color: isPasswordError
-                ? ColorHelper().getColor(GramediaColor.red500)
-                : ColorHelper().getColor(GramediaColor.neutral500),
+                ? SmartlibColors.red500
+                : SmartlibColors.neutral500,
           ),
-          borderRadius: BorderRadius.circular(
-            RadiusHelper().radius(RadiusCase.radius_S),
-          ),
+          borderRadius: BorderRadius.circular(SmartlibRadius.rS),
         ),
       ),
     );

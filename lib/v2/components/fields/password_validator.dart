@@ -1,7 +1,9 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:papilus_component_gramedia/GramediaComponent.dart';
+import 'package:papilus_component_gramedia/v2/foundation/foundation.dart';
+
+import '../texts/text.dart';
 
 class SLPasswordValidator extends HookWidget {
   const SLPasswordValidator({
@@ -49,11 +51,11 @@ class _PasswordValidatorItem extends StatelessWidget {
   Color get color {
     switch (valid) {
       case null:
-        return GramediaColor.neutral500.valueColor;
+        return SmartlibColors.neutral500;
       case true:
-        return GramediaColor.green500.valueColor;
+        return SmartlibColors.green500;
       case false:
-        return GramediaColor.red500.valueColor;
+        return SmartlibColors.red500;
     }
   }
 
@@ -73,12 +75,12 @@ class _PasswordValidatorItem extends StatelessWidget {
       children: [
         Icon(iconData, color: color),
         const SizedBox(width: 8),
-        GramediaText(
+        SmartlibText(
           requirement,
+          style: SmartlibFont.bodySMedium,
           maxLines: 2,
           color: color,
-          fontStyle: UrbanistFont.mobile_text_s_medium,
-        ),
+        )
       ],
     );
   }

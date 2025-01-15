@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:papilus_component_gramedia/GramediaComponent.dart';
+
+import '../../foundation/colors.dart';
 
 class SLCheckbox extends StatelessWidget {
   const SLCheckbox({
@@ -17,8 +18,8 @@ class SLCheckbox extends StatelessWidget {
       children: [
         Checkbox(
           value: isAgree.value,
-          checkColor: GramediaColor.white.valueColor,
-          activeColor: GramediaColor.neutral700.valueColor,
+          checkColor: SmartlibColors.white,
+          activeColor: SmartlibColors.neutral700,
           onChanged: (value) => isAgree.value = value ?? false,
           materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
           visualDensity: VisualDensity.compact,

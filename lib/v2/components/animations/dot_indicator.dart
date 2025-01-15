@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:papilus_component_gramedia/GramediaComponent.dart';
+
+import '../../foundation/colors.dart';
 
 class SmartlibDotIndicator extends StatelessWidget {
   final Axis? direction;
@@ -31,15 +32,15 @@ class SmartlibDotIndicator extends StatelessWidget {
       duration: const Duration(milliseconds: 500),
       decoration: isSelected
           ? BoxDecoration(
-              color: GramediaColor.white.valueColor,
+              color: SmartlibColors.white,
               border: Border.all(
-                color: GramediaColor.neutral700.valueColor,
+                color: SmartlibColors.neutral700,
                 strokeAlign: BorderSide.strokeAlignOutside,
               ),
               shape: BoxShape.circle,
             )
           : BoxDecoration(
-              color: GramediaColor.neutral700.valueColor.withOpacity(0.5),
+              color: SmartlibColors.neutral700.withOpacity(0.5),
               shape: BoxShape.circle,
             ),
     );
