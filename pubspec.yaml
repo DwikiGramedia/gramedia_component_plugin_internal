@@ -18,6 +18,7 @@ dependencies:
   fluentui_system_icons: ^1.1.232
   flutter_hooks: ^0.20.5
   form_validator: ^2.1.1
+  auto_size_text: ^3.0.0
 
 dev_dependencies:
   flutter_test:
