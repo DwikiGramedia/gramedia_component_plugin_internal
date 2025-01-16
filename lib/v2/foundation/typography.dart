@@ -14,52 +14,45 @@ class SmartlibFont {
 
   static TextStyle h1 = GoogleFonts.urbanist(
     fontWeight: FontWeight.w800,
-    letterSpacing: -1,
     fontSize: 40,
-    height: 48,
+    height: 48 / 40,
     color: defaultColor,
   );
   static TextStyle h2 = GoogleFonts.urbanist(
     fontWeight: FontWeight.w800,
-    letterSpacing: -0.75,
     fontSize: 32,
-    height: 40,
+    height: 40 / 32,
     color: defaultColor,
   );
   static TextStyle h3 = GoogleFonts.urbanist(
     fontWeight: FontWeight.w800,
-    letterSpacing: -0.5,
     fontSize: 28,
-    height: 36,
+    height: 36 / 28,
     color: defaultColor,
   );
   static TextStyle h4 = GoogleFonts.urbanist(
     fontWeight: FontWeight.w800,
-    letterSpacing: -0.25,
     fontSize: 24,
-    height: 32,
+    height: 32 / 24,
     color: defaultColor,
   );
   static TextStyle h5 = GoogleFonts.urbanist(
     fontWeight: FontWeight.w800,
-    letterSpacing: 0,
     fontSize: 20,
-    height: 28,
+    height: 28 / 20,
     color: defaultColor,
   );
   static TextStyle h6 = GoogleFonts.urbanist(
     fontWeight: FontWeight.w800,
-    letterSpacing: 0.5,
     fontSize: 18,
-    height: 28,
+    height: 28 / 18,
     color: defaultColor,
   );
 
   static TextStyle bodyL = GoogleFonts.urbanist(
     fontWeight: FontWeight.w800,
-    letterSpacing: 0.5,
     fontSize: 18,
-    height: 28,
+    height: 28 / 18,
     color: defaultColor,
   );
   static TextStyle bodyLExtraBold = bodyL;
@@ -71,9 +64,8 @@ class SmartlibFont {
 
   static TextStyle bodyM = GoogleFonts.urbanist(
     fontWeight: FontWeight.w800,
-    letterSpacing: 1,
     fontSize: 16,
-    height: 24,
+    height: 24 / 16,
     color: defaultColor,
   );
   static TextStyle bodyMExtraBold = bodyM;
@@ -85,9 +77,8 @@ class SmartlibFont {
 
   static TextStyle bodyS = GoogleFonts.urbanist(
     fontWeight: FontWeight.w800,
-    letterSpacing: 2,
     fontSize: 14,
-    height: 20,
+    height: 20 / 14,
     color: defaultColor,
   );
   static TextStyle bodySExtraBold = bodyS;
@@ -99,9 +90,8 @@ class SmartlibFont {
 
   static TextStyle bodyXS = GoogleFonts.urbanist(
     fontWeight: FontWeight.w800,
-    letterSpacing: 3,
     fontSize: 12,
-    height: 16,
+    height: 16 / 12,
     color: defaultColor,
   );
   static TextStyle bodyXSExtraBold = bodyXS;
@@ -113,9 +103,8 @@ class SmartlibFont {
 
   static TextStyle body2XS = GoogleFonts.urbanist(
     fontWeight: FontWeight.w800,
-    letterSpacing: 4,
     fontSize: 10,
-    height: 14,
+    height: 14 / 10,
     color: defaultColor,
   );
   static TextStyle body2XSExtraBold = body2XS;
