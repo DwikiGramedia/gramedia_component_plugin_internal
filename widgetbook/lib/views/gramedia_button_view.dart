@@ -7,6 +7,11 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 @widgetbook.UseCase(name: 'Default', type: GramediaButton)
 Widget buildButton(BuildContext context) {
   return SmartlibScaffold(
+    appBar: const SmartlibAppBar(
+      title: 'Gramedia Button',
+      leadingColor: SmartlibColors.accent50,
+      centerTitle: true,
+    ),
     withSafeArea: true,
     body: Padding(
       padding: const EdgeInsets.symmetric(horizontal: SmartlibSpacing.s16),
