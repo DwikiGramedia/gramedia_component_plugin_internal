@@ -11,6 +11,7 @@ class SmartlibButton extends StatelessWidget {
     this.backgroundColor,
     this.textColor,
     this.borderColor,
+    this.loadingColor,
   });
 
   final VoidCallback? onTap;
@@ -19,17 +20,20 @@ class SmartlibButton extends StatelessWidget {
   final Color? backgroundColor;
   final Color? textColor;
   final Color? borderColor;
+  final Color? loadingColor;
 
   const SmartlibButton.white({
     Key? key,
     required String label,
     VoidCallback? onTap,
     bool isLoading = false,
+    Color? loadingColor,
   }) : this(
           key: key,
           onTap: onTap,
           label: label,
           isLoading: isLoading,
+          loadingColor: SmartlibColors.brand500,
           backgroundColor: SmartlibColors.white,
           textColor: SmartlibColors.neutral700,
           borderColor: SmartlibColors.neutral150,
@@ -55,11 +59,11 @@ class SmartlibButton extends StatelessWidget {
           ),
         ),
         child: isLoading
-            ? const SizedBox(
+            ? SizedBox(
                 width: 20,
                 height: 20,
                 child: CircularProgressIndicator(
-                  color: SmartlibColors.white,
+                  color: loadingColor ?? SmartlibColors.white,
                   strokeWidth: 2,
                 ),
               )

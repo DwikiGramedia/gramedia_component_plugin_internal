@@ -1,0 +1,29 @@
+import 'package:flutter/material.dart';
+import 'package:papilus_component_gramedia/v2/foundation/foundation.dart';
+
+class SmartlibScaffold extends StatelessWidget {
+  final PreferredSizeWidget? appBar;
+  final Widget body;
+  final Color backgroundColor;
+  final Widget? bottomNavigationBar;
+  final bool withSafeArea;
+
+  const SmartlibScaffold({
+    Key? key,
+    this.appBar,
+    required this.body,
+    this.backgroundColor = SmartlibColors.white,
+    this.bottomNavigationBar,
+    this.withSafeArea = false,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: backgroundColor,
+      appBar: appBar,
+      body: withSafeArea ? SafeArea(child: body) : body,
+      bottomNavigationBar: bottomNavigationBar,
+    );
+  }
+}
