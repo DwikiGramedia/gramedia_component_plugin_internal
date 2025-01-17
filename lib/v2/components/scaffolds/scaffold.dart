@@ -14,7 +14,7 @@ class SmartlibScaffold extends StatelessWidget {
     required this.body,
     this.backgroundColor = SmartlibColors.white,
     this.bottomNavigationBar,
-    this.withSafeArea = false,
+    this.withSafeArea = true,
   }) : super(key: key);
 
   @override
