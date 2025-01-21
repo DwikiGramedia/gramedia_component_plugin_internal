@@ -12,6 +12,7 @@ class SmartlibButton extends StatelessWidget {
     this.textColor,
     this.borderColor,
     this.loadingColor,
+    this.isDisabled = false,
   });
 
   final VoidCallback? onTap;
@@ -21,13 +22,15 @@ class SmartlibButton extends StatelessWidget {
   final Color? textColor;
   final Color? borderColor;
   final Color? loadingColor;
+  final bool isDisabled;
 
-  const SmartlibButton.white({
+  const SmartlibButton.secondary({
     Key? key,
     required String label,
     VoidCallback? onTap,
     bool isLoading = false,
     Color? loadingColor,
+    bool isDisabled = false,
   }) : this(
           key: key,
           onTap: onTap,
@@ -37,16 +40,37 @@ class SmartlibButton extends StatelessWidget {
           backgroundColor: SmartlibColors.white,
           textColor: SmartlibColors.neutral700,
           borderColor: SmartlibColors.neutral150,
+          isDisabled: isDisabled,
+        );
+
+  SmartlibButton.tertiery({
+    Key? key,
+    required String label,
+    VoidCallback? onTap,
+    bool isLoading = false,
+    Color? loadingColor,
+    bool isDisabled = false,
+  }) : this(
+          key: key,
+          onTap: onTap,
+          label: label,
+          isLoading: isLoading,
+          loadingColor: SmartlibColors.brand500,
+          backgroundColor: SmartlibColors.white,
+          textColor: SmartlibColors.neutral700,
+          borderColor: SmartlibColors.white.withOpacity(0),
+          isDisabled: isDisabled,
         );
 
   @override
   Widget build(BuildContext context) {
-    var buttonColor = onTap == null
+    var isDisabled = this.isDisabled || onTap == null;
+    var buttonColor = isDisabled && backgroundColor != SmartlibColors.white
         ? SmartlibColors.neutral200
         : backgroundColor ?? SmartlibColors.brand500;
 
     return InkWell(
-      onTap: onTap,
+      onTap: isLoading || isDisabled ? null : onTap,
       child: Container(
         width: double.infinity,
         height: 44,
@@ -73,7 +97,9 @@ class SmartlibButton extends StatelessWidget {
                 maxLines: 1,
                 minFontSize: 10,
                 style: SmartlibFont.bodySExtraBold.copyWith(
-                  color: textColor ?? SmartlibColors.white,
+                  color: isDisabled && textColor != null
+                      ? SmartlibColors.neutral200
+                      : textColor ?? SmartlibColors.white,
                 ),
               ),
       ),
