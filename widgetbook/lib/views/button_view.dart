@@ -94,28 +94,19 @@ Widget buildButton(BuildContext context) {
           ),
           const SizedBox(height: PapyrusSpacing.s8),
           PapyrusButton(
-            label: context.knobs.string(
-              label: 'Disabled Button Primary',
-              initialValue: 'Primary Button',
-            ),
+            label: '',
             isLoading: true,
             onTap: () {},
           ),
           const SizedBox(height: PapyrusSpacing.s4),
           PapyrusButton.secondary(
-            label: context.knobs.string(
-              label: 'Disabled Button Secondary',
-              initialValue: 'Secondary Button',
-            ),
+            label: '',
             isLoading: true,
             onTap: () {},
           ),
           const SizedBox(height: PapyrusSpacing.s4),
           PapyrusButton.tertiery(
-            label: context.knobs.string(
-              label: 'Disabled Button Tertiery',
-              initialValue: 'Tertiery Button',
-            ),
+            label: '',
             isLoading: true,
             onTap: () {},
           ),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:papilus_component_gramedia/v2/components/components.dart';
 import 'package:papilus_component_gramedia/v2/foundation/foundation.dart';
-import 'package:widgetbook_workspace/widgets/color_tile.dart';
 
 class ColorCard extends StatelessWidget {
   const ColorCard({

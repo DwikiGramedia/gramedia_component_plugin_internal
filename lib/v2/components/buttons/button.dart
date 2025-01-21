@@ -13,6 +13,7 @@ class PapyrusButton extends StatelessWidget {
     this.borderColor,
     this.loadingColor,
     this.isDisabled = false,
+    this.icon,
   });
 
   final VoidCallback? onTap;
@@ -23,6 +24,7 @@ class PapyrusButton extends StatelessWidget {
   final Color? borderColor;
   final Color? loadingColor;
   final bool isDisabled;
+  final IconData? icon;
 
   const PapyrusButton.secondary({
     Key? key,
@@ -31,6 +33,7 @@ class PapyrusButton extends StatelessWidget {
     bool isLoading = false,
     Color? loadingColor,
     bool isDisabled = false,
+    IconData? icon,
   }) : this(
           key: key,
           onTap: onTap,
@@ -41,6 +44,7 @@ class PapyrusButton extends StatelessWidget {
           textColor: PapyrusColors.neutral700,
           borderColor: PapyrusColors.neutral150,
           isDisabled: isDisabled,
+          icon: icon,
         );
 
   PapyrusButton.tertiery({
@@ -50,6 +54,7 @@ class PapyrusButton extends StatelessWidget {
     bool isLoading = false,
     Color? loadingColor,
     bool isDisabled = false,
+    IconData? icon,
   }) : this(
           key: key,
           onTap: onTap,
@@ -60,6 +65,7 @@ class PapyrusButton extends StatelessWidget {
           textColor: PapyrusColors.neutral700,
           borderColor: PapyrusColors.white.withOpacity(0),
           isDisabled: isDisabled,
+          icon: icon,
         );
 
   @override
@@ -91,16 +97,31 @@ class PapyrusButton extends StatelessWidget {
                   strokeWidth: 2,
                 ),
               )
-            : AutoSizeText(
-                label,
-                textAlign: TextAlign.center,
-                maxLines: 1,
-                minFontSize: 10,
-                style: PapyrusFont.bodySExtraBold.copyWith(
-                  color: isDisabled && textColor != null
-                      ? PapyrusColors.neutral200
-                      : textColor ?? PapyrusColors.white,
-                ),
+            : Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  if (icon != null) ...[
+                    Icon(
+                      icon,
+                      size: 20,
+                      color: isDisabled && textColor != null
+                          ? PapyrusColors.neutral200
+                          : textColor ?? PapyrusColors.white,
+                    ),
+                    const SizedBox(width: 5),
+                  ],
+                  AutoSizeText(
+                    label,
+                    textAlign: TextAlign.center,
+                    maxLines: 1,
+                    minFontSize: 10,
+                    style: PapyrusFont.bodySExtraBold.copyWith(
+                      color: isDisabled && textColor != null
+                          ? PapyrusColors.neutral200
+                          : textColor ?? PapyrusColors.white,
+                    ),
+                  ),
+                ],
               ),
       ),
     );

@@ -10,8 +10,9 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:widgetbook/widgetbook.dart' as _i1;
-import 'package:widgetbook_workspace/views/color_view.dart' as _i3;
-import 'package:widgetbook_workspace/views/gramedia_button_view.dart' as _i2;
+import 'package:widgetbook_workspace/views/button_view.dart' as _i2;
+import 'package:widgetbook_workspace/views/color_view.dart' as _i4;
+import 'package:widgetbook_workspace/views/icon_button_view.dart' as _i3;
 
 final directories = <_i1.WidgetbookNode>[
   _i1.WidgetbookFolder(
@@ -24,12 +25,19 @@ final directories = <_i1.WidgetbookNode>[
             name: 'buttons',
             children: [
               _i1.WidgetbookLeafComponent(
-                name: 'SmartlibButton',
+                name: 'PapyrusButton',
                 useCase: _i1.WidgetbookUseCase(
                   name: 'Default',
                   builder: _i2.buildButton,
                 ),
-              )
+              ),
+              _i1.WidgetbookLeafComponent(
+                name: 'PapyrusIconButton',
+                useCase: _i1.WidgetbookUseCase(
+                  name: 'Default',
+                  builder: _i3.buildButton,
+                ),
+              ),
             ],
           )
         ],
@@ -38,10 +46,10 @@ final directories = <_i1.WidgetbookNode>[
         name: 'foundation',
         children: [
           _i1.WidgetbookLeafComponent(
-            name: 'SmartlibColors',
+            name: 'PapyrusColors',
             useCase: _i1.WidgetbookUseCase(
-              name: 'Colors',
-              builder: _i3.buildButton,
+              name: 'Default',
+              builder: _i4.buildButton,
             ),
           )
         ],
