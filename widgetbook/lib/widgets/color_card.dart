@@ -18,19 +18,19 @@ class ColorCard extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SmartlibText(title, style: SmartlibFont.h6),
-        const SizedBox(height: SmartlibSpacing.s8),
+        PapyrusText(title, style: PapyrusFont.h6),
+        const SizedBox(height: PapyrusSpacing.s8),
         GridView(
           shrinkWrap: true,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            mainAxisSpacing: SmartlibSpacing.s8,
-            crossAxisSpacing: SmartlibSpacing.s8,
+            mainAxisSpacing: PapyrusSpacing.s8,
+            crossAxisSpacing: PapyrusSpacing.s8,
             childAspectRatio: 8 / 2,
           ),
           children: children,
         ),
-        const SizedBox(height: SmartlibSpacing.s20),
+        const SizedBox(height: PapyrusSpacing.s20),
       ],
     );
   }

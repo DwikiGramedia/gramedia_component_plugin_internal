@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:papilus_component_gramedia/v2/foundation/foundation.dart';
 
-class SmartlibScaffold extends StatelessWidget {
+class PapyrusScaffold extends StatelessWidget {
   final PreferredSizeWidget? appBar;
   final Widget body;
   final Color backgroundColor;
   final Widget? bottomNavigationBar;
   final bool withSafeArea;
 
-  const SmartlibScaffold({
+  const PapyrusScaffold({
     Key? key,
     this.appBar,
     required this.body,
-    this.backgroundColor = SmartlibColors.white,
+    this.backgroundColor = PapyrusColors.white,
     this.bottomNavigationBar,
     this.withSafeArea = true,
   }) : super(key: key);

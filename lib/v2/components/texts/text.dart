@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class SmartlibText extends StatelessWidget {
+class PapyrusText extends StatelessWidget {
   final String data;
   final TextStyle style;
   final TextAlign? textAlign;
@@ -8,7 +8,7 @@ class SmartlibText extends StatelessWidget {
   final TextOverflow? overflow;
   final Color? color;
 
-  const SmartlibText(
+  const PapyrusText(
     this.data, {
     super.key,
     required this.style,

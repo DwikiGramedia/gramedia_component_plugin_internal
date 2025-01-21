@@ -4,13 +4,13 @@ import 'package:google_fonts/google_fonts.dart';
 import 'colors.dart';
 
 /// ## Usage
-/// access only the static Font, for exampel ```SmartlibFont.h1```
+/// access only the static Font, for exampel ```PapyrusFont.h1```
 ///
 /// if neccessary, you could customize the font by using ```.copyWith()``` method
 ///
-/// for example ```SmartlibFont.h1.copyWith(fontSize: 70)```
-class SmartlibFont {
-  static const defaultColor = SmartlibColors.neutral700;
+/// for example ```PapyrusFont.h1.copyWith(fontSize: 70)```
+class PapyrusFont {
+  static const defaultColor = PapyrusColors.neutral700;
 
   static TextStyle h1 = GoogleFonts.urbanist(
     fontWeight: FontWeight.w800,

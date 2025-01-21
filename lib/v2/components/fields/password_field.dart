@@ -4,8 +4,8 @@ import 'package:form_validator/form_validator.dart';
 
 import 'text_field.dart';
 
-class SLPasswordField extends HookWidget {
-  const SLPasswordField({
+class PapyrusPasswordField extends HookWidget {
+  const PapyrusPasswordField({
     super.key,
     required this.controller,
     this.labelText,
@@ -24,7 +24,7 @@ class SLPasswordField extends HookWidget {
   Widget build(BuildContext context) {
     var isObscure = useState(this.isObscure);
 
-    return SLTextField(
+    return PapyrusTextField(
       isObscure: isObscure.value,
       controller: controller,
       onTapOutside: onTapOutside,

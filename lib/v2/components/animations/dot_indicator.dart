@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 
 import '../../foundation/colors.dart';
 
-class SmartlibDotIndicator extends StatelessWidget {
+class PapyrusDotIndicator extends StatelessWidget {
   final Axis? direction;
   final double? sizeActive;
   final double? sizeInActive;
@@ -13,7 +13,7 @@ class SmartlibDotIndicator extends StatelessWidget {
   final double? spaceDot;
   final MainAxisAlignment? mainAxisAlignment;
 
-  const SmartlibDotIndicator({
+  const PapyrusDotIndicator({
     super.key,
     this.direction = Axis.horizontal,
     this.sizeActive = 8,
@@ -32,15 +32,15 @@ class SmartlibDotIndicator extends StatelessWidget {
       duration: const Duration(milliseconds: 500),
       decoration: isSelected
           ? BoxDecoration(
-              color: SmartlibColors.white,
+              color: PapyrusColors.white,
               border: Border.all(
-                color: SmartlibColors.neutral700,
+                color: PapyrusColors.neutral700,
                 strokeAlign: BorderSide.strokeAlignOutside,
               ),
               shape: BoxShape.circle,
             )
           : BoxDecoration(
-              color: SmartlibColors.neutral700.withOpacity(0.5),
+              color: PapyrusColors.neutral700.withOpacity(0.5),
               shape: BoxShape.circle,
             ),
     );

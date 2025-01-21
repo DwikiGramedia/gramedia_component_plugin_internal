@@ -5,15 +5,15 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 import 'package:widgetbook_workspace/widgets/color_card.dart';
 import 'package:widgetbook_workspace/widgets/color_tile.dart';
 
-@widgetbook.UseCase(name: 'Default', type: SmartlibColors)
+@widgetbook.UseCase(name: 'Default', type: PapyrusColors)
 Widget buildButton(BuildContext context) {
-  return SmartlibScaffold(
-    appBar: const SmartlibAppBar(
-      title: 'Smartlib Colors',
+  return PapyrusScaffold(
+    appBar: const PapyrusAppBar(
+      title: 'Papyrus Colors',
       centerTitle: true,
     ),
     body: Padding(
-      padding: const EdgeInsets.symmetric(horizontal: SmartlibSpacing.s16),
+      padding: const EdgeInsets.symmetric(horizontal: PapyrusSpacing.s16),
       child: ListView(
         children: const [
           ColorCard(title: 'Neutral Colors', children: neutralColors),
@@ -29,127 +29,127 @@ Widget buildButton(BuildContext context) {
 }
 
 const neutralColors = [
-  ColorTile(color: SmartlibColors.white, colorName: 'White'),
+  ColorTile(color: PapyrusColors.white, colorName: 'White'),
   ColorTile(
-    color: SmartlibColors.neutral500,
+    color: PapyrusColors.neutral500,
     colorName: 'Neutral/500',
     darkText: false,
   ),
-  ColorTile(color: SmartlibColors.neutral50, colorName: 'Neutral/50'),
+  ColorTile(color: PapyrusColors.neutral50, colorName: 'Neutral/50'),
   ColorTile(
-    color: SmartlibColors.neutral600,
+    color: PapyrusColors.neutral600,
     colorName: 'Neutral/600',
     darkText: false,
   ),
-  ColorTile(color: SmartlibColors.neutral150, colorName: 'Neutral/150'),
+  ColorTile(color: PapyrusColors.neutral150, colorName: 'Neutral/150'),
   ColorTile(
-    color: SmartlibColors.neutral700,
+    color: PapyrusColors.neutral700,
     colorName: 'Neutral/700',
     darkText: false,
   ),
-  ColorTile(color: SmartlibColors.neutral200, colorName: 'Neutral/200'),
+  ColorTile(color: PapyrusColors.neutral200, colorName: 'Neutral/200'),
 ];
 
 const brandColors = [
-  ColorTile(color: SmartlibColors.brand50, colorName: 'Brand/50'),
+  ColorTile(color: PapyrusColors.brand50, colorName: 'Brand/50'),
   ColorTile(
-    color: SmartlibColors.brand500,
+    color: PapyrusColors.brand500,
     colorName: 'Brand/500',
     darkText: false,
   ),
-  ColorTile(color: SmartlibColors.brand200, colorName: 'Brand/200'),
+  ColorTile(color: PapyrusColors.brand200, colorName: 'Brand/200'),
   ColorTile(
-    color: SmartlibColors.brand600,
+    color: PapyrusColors.brand600,
     colorName: 'Brand/600',
     darkText: false,
   ),
   SizedBox(),
   ColorTile(
-    color: SmartlibColors.brand700,
+    color: PapyrusColors.brand700,
     colorName: 'Brand/700',
     darkText: false,
   ),
 ];
 
 const accentColors = [
-  ColorTile(color: SmartlibColors.accent50, colorName: 'Accent/50'),
+  ColorTile(color: PapyrusColors.accent50, colorName: 'Accent/50'),
   ColorTile(
-    color: SmartlibColors.accent500,
+    color: PapyrusColors.accent500,
     colorName: 'Accent/500',
     darkText: false,
   ),
   SizedBox(),
   ColorTile(
-    color: SmartlibColors.accent600,
+    color: PapyrusColors.accent600,
     colorName: 'Accent/600',
     darkText: false,
   ),
   SizedBox(),
   ColorTile(
-    color: SmartlibColors.accent700,
+    color: PapyrusColors.accent700,
     colorName: 'Accent/700',
     darkText: false,
   ),
 ];
 
 const greenColors = [
-  ColorTile(color: SmartlibColors.green50, colorName: 'Green/50'),
+  ColorTile(color: PapyrusColors.green50, colorName: 'Green/50'),
   ColorTile(
-    color: SmartlibColors.green500,
+    color: PapyrusColors.green500,
     colorName: 'Green/500',
     darkText: false,
   ),
   SizedBox(),
   ColorTile(
-    color: SmartlibColors.green600,
+    color: PapyrusColors.green600,
     colorName: 'Green/600',
     darkText: false,
   ),
   SizedBox(),
   ColorTile(
-    color: SmartlibColors.green700,
+    color: PapyrusColors.green700,
     colorName: 'Green/700',
     darkText: false,
   ),
 ];
 
 const yellowColors = [
-  ColorTile(color: SmartlibColors.yellow50, colorName: 'Yellow/50'),
+  ColorTile(color: PapyrusColors.yellow50, colorName: 'Yellow/50'),
   ColorTile(
-    color: SmartlibColors.yellow500,
+    color: PapyrusColors.yellow500,
     colorName: 'Yellow/500',
     darkText: false,
   ),
   SizedBox(),
   ColorTile(
-    color: SmartlibColors.yellow600,
+    color: PapyrusColors.yellow600,
     colorName: 'Yellow/600',
     darkText: false,
   ),
   SizedBox(),
   ColorTile(
-    color: SmartlibColors.yellow700,
+    color: PapyrusColors.yellow700,
     colorName: 'Yellow/700',
     darkText: false,
   ),
 ];
 
 const redColors = [
-  ColorTile(color: SmartlibColors.red50, colorName: 'Red/50'),
+  ColorTile(color: PapyrusColors.red50, colorName: 'Red/50'),
   ColorTile(
-    color: SmartlibColors.red500,
+    color: PapyrusColors.red500,
     colorName: 'Red/500',
     darkText: false,
   ),
   SizedBox(),
   ColorTile(
-    color: SmartlibColors.red600,
+    color: PapyrusColors.red600,
     colorName: 'Red/600',
     darkText: false,
   ),
   SizedBox(),
   ColorTile(
-    color: SmartlibColors.red700,
+    color: PapyrusColors.red700,
     colorName: 'Red/700',
     darkText: false,
   ),

@@ -3,8 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:papilus_component_gramedia/v2/foundation/foundation.dart';
 
-class SLTextField extends HookWidget {
-  const SLTextField({
+class PapyrusTextField extends HookWidget {
+  const PapyrusTextField({
     super.key,
     required this.controller,
     required this.labelText,
@@ -70,8 +70,8 @@ class SLTextField extends HookWidget {
       onFieldSubmitted: onFieldSubmitted,
       autovalidateMode:
           autovalidateMode ? AutovalidateMode.onUserInteraction : null,
-      style: SmartlibFont.bodyMMedium.copyWith(
-        color: textColor ?? SmartlibColors.neutral700,
+      style: PapyrusFont.bodyMMedium.copyWith(
+        color: textColor ?? PapyrusColors.neutral700,
       ),
       decoration: InputDecoration(
         labelText: labelText,
@@ -80,41 +80,41 @@ class SLTextField extends HookWidget {
         prefix: prefix,
         prefixIcon: prefixIcon,
         errorText: errorText,
-        errorStyle: SmartlibFont.bodyXSMedium.copyWith(
-          color: SmartlibColors.red500,
+        errorStyle: PapyrusFont.bodyXSMedium.copyWith(
+          color: PapyrusColors.red500,
         ),
         errorMaxLines: 3,
-        labelStyle: SmartlibFont.bodyMMedium.copyWith(
-          color: textColor ?? SmartlibColors.neutral700,
+        labelStyle: PapyrusFont.bodyMMedium.copyWith(
+          color: textColor ?? PapyrusColors.neutral700,
         ),
         disabledBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: SmartlibColors.neutral200),
-          borderRadius: BorderRadius.circular(SmartlibRadius.rS),
+          borderSide: const BorderSide(color: PapyrusColors.neutral200),
+          borderRadius: BorderRadius.circular(PapyrusRadius.rS),
         ),
         focusedErrorBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: SmartlibColors.red500),
-          borderRadius: BorderRadius.circular(SmartlibRadius.rS),
+          borderSide: const BorderSide(color: PapyrusColors.red500),
+          borderRadius: BorderRadius.circular(PapyrusRadius.rS),
         ),
         errorBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: SmartlibColors.red500),
-          borderRadius: BorderRadius.circular(SmartlibRadius.rS),
+          borderSide: const BorderSide(color: PapyrusColors.red500),
+          borderRadius: BorderRadius.circular(PapyrusRadius.rS),
         ),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
             color: isPasswordError
-                ? SmartlibColors.red500
-                : SmartlibColors.neutral700,
+                ? PapyrusColors.red500
+                : PapyrusColors.neutral700,
             width: 2,
           ),
-          borderRadius: BorderRadius.circular(SmartlibRadius.rS),
+          borderRadius: BorderRadius.circular(PapyrusRadius.rS),
         ),
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(
             color: isPasswordError
-                ? SmartlibColors.red500
-                : SmartlibColors.neutral500,
+                ? PapyrusColors.red500
+                : PapyrusColors.neutral500,
           ),
-          borderRadius: BorderRadius.circular(SmartlibRadius.rS),
+          borderRadius: BorderRadius.circular(PapyrusRadius.rS),
         ),
       ),
     );

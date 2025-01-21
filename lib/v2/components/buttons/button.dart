@@ -2,8 +2,8 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:papilus_component_gramedia/v2/foundation/foundation.dart';
 
-class SmartlibButton extends StatelessWidget {
-  const SmartlibButton({
+class PapyrusButton extends StatelessWidget {
+  const PapyrusButton({
     super.key,
     required this.label,
     this.onTap,
@@ -24,7 +24,7 @@ class SmartlibButton extends StatelessWidget {
   final Color? loadingColor;
   final bool isDisabled;
 
-  const SmartlibButton.secondary({
+  const PapyrusButton.secondary({
     Key? key,
     required String label,
     VoidCallback? onTap,
@@ -36,14 +36,14 @@ class SmartlibButton extends StatelessWidget {
           onTap: onTap,
           label: label,
           isLoading: isLoading,
-          loadingColor: SmartlibColors.brand500,
-          backgroundColor: SmartlibColors.white,
-          textColor: SmartlibColors.neutral700,
-          borderColor: SmartlibColors.neutral150,
+          loadingColor: PapyrusColors.brand500,
+          backgroundColor: PapyrusColors.white,
+          textColor: PapyrusColors.neutral700,
+          borderColor: PapyrusColors.neutral150,
           isDisabled: isDisabled,
         );
 
-  SmartlibButton.tertiery({
+  PapyrusButton.tertiery({
     Key? key,
     required String label,
     VoidCallback? onTap,
@@ -55,19 +55,19 @@ class SmartlibButton extends StatelessWidget {
           onTap: onTap,
           label: label,
           isLoading: isLoading,
-          loadingColor: SmartlibColors.brand500,
-          backgroundColor: SmartlibColors.white,
-          textColor: SmartlibColors.neutral700,
-          borderColor: SmartlibColors.white.withOpacity(0),
+          loadingColor: PapyrusColors.brand500,
+          backgroundColor: PapyrusColors.white,
+          textColor: PapyrusColors.neutral700,
+          borderColor: PapyrusColors.white.withOpacity(0),
           isDisabled: isDisabled,
         );
 
   @override
   Widget build(BuildContext context) {
     var isDisabled = this.isDisabled || onTap == null;
-    var buttonColor = isDisabled && backgroundColor != SmartlibColors.white
-        ? SmartlibColors.neutral200
-        : backgroundColor ?? SmartlibColors.brand500;
+    var buttonColor = isDisabled && backgroundColor != PapyrusColors.white
+        ? PapyrusColors.neutral200
+        : backgroundColor ?? PapyrusColors.brand500;
 
     return InkWell(
       onTap: isLoading || isDisabled ? null : onTap,
@@ -87,7 +87,7 @@ class SmartlibButton extends StatelessWidget {
                 width: 20,
                 height: 20,
                 child: CircularProgressIndicator(
-                  color: loadingColor ?? SmartlibColors.white,
+                  color: loadingColor ?? PapyrusColors.white,
                   strokeWidth: 2,
                 ),
               )
@@ -96,10 +96,10 @@ class SmartlibButton extends StatelessWidget {
                 textAlign: TextAlign.center,
                 maxLines: 1,
                 minFontSize: 10,
-                style: SmartlibFont.bodySExtraBold.copyWith(
+                style: PapyrusFont.bodySExtraBold.copyWith(
                   color: isDisabled && textColor != null
-                      ? SmartlibColors.neutral200
-                      : textColor ?? SmartlibColors.white,
+                      ? PapyrusColors.neutral200
+                      : textColor ?? PapyrusColors.white,
                 ),
               ),
       ),

@@ -1,4 +1,4 @@
-class SmartlibSpacing {
+class PapyrusSpacing {
   static const s4 = 4.0;
   static const s8 = 8.0;
   static const s12 = 12.0;

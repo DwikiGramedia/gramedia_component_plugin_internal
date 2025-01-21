@@ -5,8 +5,8 @@ import 'package:papilus_component_gramedia/v2/foundation/foundation.dart';
 
 import '../texts/text.dart';
 
-class SLPasswordValidator extends HookWidget {
-  const SLPasswordValidator({
+class PapyrusPasswordValidator extends HookWidget {
+  const PapyrusPasswordValidator({
     super.key,
     this.hasMinChar,
     this.hasNumberAndSymbol,
@@ -51,11 +51,11 @@ class _PasswordValidatorItem extends StatelessWidget {
   Color get color {
     switch (valid) {
       case null:
-        return SmartlibColors.neutral500;
+        return PapyrusColors.neutral500;
       case true:
-        return SmartlibColors.green500;
+        return PapyrusColors.green500;
       case false:
-        return SmartlibColors.red500;
+        return PapyrusColors.red500;
     }
   }
 
@@ -75,9 +75,9 @@ class _PasswordValidatorItem extends StatelessWidget {
       children: [
         Icon(iconData, color: color),
         const SizedBox(width: 8),
-        SmartlibText(
+        PapyrusText(
           requirement,
-          style: SmartlibFont.bodySMedium,
+          style: PapyrusFont.bodySMedium,
           maxLines: 2,
           color: color,
         )

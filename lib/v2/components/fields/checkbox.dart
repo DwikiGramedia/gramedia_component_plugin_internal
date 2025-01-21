@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../foundation/colors.dart';
 
-class SLCheckbox extends StatelessWidget {
-  const SLCheckbox({
+class PapyrusCheckbox extends StatelessWidget {
+  const PapyrusCheckbox({
     super.key,
     required this.isAgree,
     required this.description,
@@ -18,8 +18,8 @@ class SLCheckbox extends StatelessWidget {
       children: [
         Checkbox(
           value: isAgree.value,
-          checkColor: SmartlibColors.white,
-          activeColor: SmartlibColors.neutral700,
+          checkColor: PapyrusColors.white,
+          activeColor: PapyrusColors.neutral700,
           onChanged: (value) => isAgree.value = value ?? false,
           materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
           visualDensity: VisualDensity.compact,

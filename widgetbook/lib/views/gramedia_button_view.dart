@@ -4,28 +4,28 @@ import 'package:papilus_component_gramedia/v2/foundation/foundation.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
-@widgetbook.UseCase(name: 'Default', type: SmartlibButton)
+@widgetbook.UseCase(name: 'Default', type: PapyrusButton)
 Widget buildButton(BuildContext context) {
-  return SmartlibScaffold(
-    appBar: const SmartlibAppBar(
-      title: 'Smartlib Button',
-      leadingColor: SmartlibColors.accent50,
+  return PapyrusScaffold(
+    appBar: const PapyrusAppBar(
+      title: 'Papyrus Button',
+      leadingColor: PapyrusColors.accent50,
       centerTitle: true,
     ),
     body: Padding(
-      padding: const EdgeInsets.symmetric(horizontal: SmartlibSpacing.s16),
+      padding: const EdgeInsets.symmetric(horizontal: PapyrusSpacing.s16),
       child: ListView(
-        padding: const EdgeInsets.only(top: SmartlibSpacing.s16),
+        padding: const EdgeInsets.only(top: PapyrusSpacing.s16),
         shrinkWrap: true,
         children: [
           // Active Button
-          SmartlibText(
+          PapyrusText(
             'Active Button',
-            style: SmartlibFont.h6,
+            style: PapyrusFont.h6,
             textAlign: TextAlign.start,
           ),
-          const SizedBox(height: SmartlibSpacing.s8),
-          SmartlibButton(
+          const SizedBox(height: PapyrusSpacing.s8),
+          PapyrusButton(
             label: context.knobs.string(
               label: 'Active Button Primary',
               initialValue: 'Primary Button',
@@ -33,8 +33,8 @@ Widget buildButton(BuildContext context) {
             isLoading: false,
             onTap: () {},
           ),
-          const SizedBox(height: SmartlibSpacing.s4),
-          SmartlibButton.secondary(
+          const SizedBox(height: PapyrusSpacing.s4),
+          PapyrusButton.secondary(
             label: context.knobs.string(
               label: 'Active Button Secondary',
               initialValue: 'Secondary Button',
@@ -42,8 +42,8 @@ Widget buildButton(BuildContext context) {
             isLoading: false,
             onTap: () {},
           ),
-          const SizedBox(height: SmartlibSpacing.s4),
-          SmartlibButton.tertiery(
+          const SizedBox(height: PapyrusSpacing.s4),
+          PapyrusButton.tertiery(
             label: context.knobs.string(
               label: 'Active Button Tertiery',
               initialValue: 'Tertiery Button',
@@ -51,15 +51,15 @@ Widget buildButton(BuildContext context) {
             isLoading: false,
             onTap: () {},
           ),
-          const SizedBox(height: SmartlibSpacing.s16),
+          const SizedBox(height: PapyrusSpacing.s16),
           // Disabled Button
-          SmartlibText(
+          PapyrusText(
             'Disabled Button',
-            style: SmartlibFont.h6,
+            style: PapyrusFont.h6,
             textAlign: TextAlign.start,
           ),
-          const SizedBox(height: SmartlibSpacing.s8),
-          SmartlibButton(
+          const SizedBox(height: PapyrusSpacing.s8),
+          PapyrusButton(
             label: context.knobs.string(
               label: 'Disabled Button Primary',
               initialValue: 'Primary Button',
@@ -67,8 +67,8 @@ Widget buildButton(BuildContext context) {
             isLoading: false,
             onTap: null,
           ),
-          const SizedBox(height: SmartlibSpacing.s4),
-          SmartlibButton.secondary(
+          const SizedBox(height: PapyrusSpacing.s4),
+          PapyrusButton.secondary(
             label: context.knobs.string(
               label: 'Disabled Button Secondary',
               initialValue: 'Secondary Button',
@@ -76,8 +76,8 @@ Widget buildButton(BuildContext context) {
             isLoading: false,
             onTap: null,
           ),
-          const SizedBox(height: SmartlibSpacing.s4),
-          SmartlibButton.tertiery(
+          const SizedBox(height: PapyrusSpacing.s4),
+          PapyrusButton.tertiery(
             label: context.knobs.string(
               label: 'Disabled Button Tertiery',
               initialValue: 'Tertiery Button',
@@ -85,15 +85,15 @@ Widget buildButton(BuildContext context) {
             isLoading: false,
             onTap: null,
           ),
-          const SizedBox(height: SmartlibSpacing.s16),
+          const SizedBox(height: PapyrusSpacing.s16),
           // Loading Button
-          SmartlibText(
+          PapyrusText(
             'Loading Button',
-            style: SmartlibFont.h6,
+            style: PapyrusFont.h6,
             textAlign: TextAlign.start,
           ),
-          const SizedBox(height: SmartlibSpacing.s8),
-          SmartlibButton(
+          const SizedBox(height: PapyrusSpacing.s8),
+          PapyrusButton(
             label: context.knobs.string(
               label: 'Disabled Button Primary',
               initialValue: 'Primary Button',
@@ -101,8 +101,8 @@ Widget buildButton(BuildContext context) {
             isLoading: true,
             onTap: () {},
           ),
-          const SizedBox(height: SmartlibSpacing.s4),
-          SmartlibButton.secondary(
+          const SizedBox(height: PapyrusSpacing.s4),
+          PapyrusButton.secondary(
             label: context.knobs.string(
               label: 'Disabled Button Secondary',
               initialValue: 'Secondary Button',
@@ -110,8 +110,8 @@ Widget buildButton(BuildContext context) {
             isLoading: true,
             onTap: () {},
           ),
-          const SizedBox(height: SmartlibSpacing.s4),
-          SmartlibButton.tertiery(
+          const SizedBox(height: PapyrusSpacing.s4),
+          PapyrusButton.tertiery(
             label: context.knobs.string(
               label: 'Disabled Button Tertiery',
               initialValue: 'Tertiery Button',

@@ -1,12 +1,12 @@
 import 'dart:ui';
 
 /// ## Usage
-/// access only the static Color, for exampel ```SmartlibColors.neutral50```
+/// access only the static Color, for exampel ```PapyrusColors.neutral50```
 ///
 /// if neccessary, you could customize the Color by using build in methods
 ///
-/// for example ```SmartlibColors.neutral50.withOpacity(0.5)```
-class SmartlibColors {
+/// for example ```PapyrusColors.neutral50.withOpacity(0.5)```
+class PapyrusColors {
   static const white = Color(0xffFFFFFF);
 
   static const neutral50 = Color(0xffF1F2F2);

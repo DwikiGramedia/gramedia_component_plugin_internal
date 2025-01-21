@@ -1,4 +1,4 @@
-class SmartlibRadius {
+class PapyrusRadius {
   static const r2XS = 4.0;
   static const rXS = 8.0;
   static const rS = 12.0;

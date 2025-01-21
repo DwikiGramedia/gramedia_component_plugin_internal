@@ -3,8 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:papilus_component_gramedia/v2/components/texts/text.dart';
 import 'package:papilus_component_gramedia/v2/foundation/foundation.dart';
 
-class SmartlibAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const SmartlibAppBar({
+class PapyrusAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const PapyrusAppBar({
     super.key,
     this.title = '',
     this.centerTitle = false,
@@ -35,11 +35,11 @@ class SmartlibAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: SmartlibText(title, style: SmartlibFont.h4),
+      title: PapyrusText(title, style: PapyrusFont.h4),
       centerTitle: centerTitle,
       titleTextStyle: titleTextStyle,
-      backgroundColor: SmartlibColors.white,
-      foregroundColor: SmartlibColors.neutral700,
+      backgroundColor: PapyrusColors.white,
+      foregroundColor: PapyrusColors.neutral700,
       automaticallyImplyLeading: showLeading,
       leading: !showLeading ? null : leading,
       leadingWidth: 60,
