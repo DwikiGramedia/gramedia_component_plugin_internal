@@ -74,6 +74,7 @@ class PapyrusTextField extends HookWidget {
         color: textColor ?? PapyrusColors.neutral700,
       ),
       decoration: InputDecoration(
+        contentPadding: const EdgeInsets.all(16),
         labelText: labelText,
         suffix: suffix,
         suffixIcon: suffixIcon,
