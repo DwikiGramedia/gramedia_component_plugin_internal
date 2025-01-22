@@ -13,7 +13,7 @@ class PapyrusText extends StatelessWidget {
     super.key,
     required this.style,
     this.overflow,
-    this.textAlign = TextAlign.center,
+    this.textAlign = TextAlign.left,
     this.maxLines = 1,
     this.color,
   });

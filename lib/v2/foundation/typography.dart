@@ -49,70 +49,103 @@ class PapyrusFont {
     color: defaultColor,
   );
 
-  static TextStyle bodyL = GoogleFonts.urbanist(
+  static TextStyle bodyLExtraBold = GoogleFonts.urbanist(
     fontWeight: FontWeight.w800,
     fontSize: 18,
     height: 28 / 18,
     color: defaultColor,
   );
-  static TextStyle bodyLExtraBold = bodyL;
-  static TextStyle bodyLMedium = bodyL.copyWith(fontWeight: FontWeight.w500);
-  static TextStyle bodyLSemiboldUnderline = bodyL.copyWith(
+  static TextStyle bodyLMedium = GoogleFonts.urbanist(
+    fontWeight: FontWeight.w500,
+    fontSize: 18,
+    height: 28 / 18,
+    color: defaultColor,
+  );
+  static TextStyle bodyLSemiboldUnderline = GoogleFonts.urbanist(
     fontWeight: FontWeight.w600,
     decoration: TextDecoration.underline,
+    fontSize: 18,
+    height: 28 / 18,
+    color: defaultColor,
   );
 
-  static TextStyle bodyM = GoogleFonts.urbanist(
+  static TextStyle bodyMExtraBold = GoogleFonts.urbanist(
     fontWeight: FontWeight.w800,
     fontSize: 16,
     height: 24 / 16,
     color: defaultColor,
   );
-  static TextStyle bodyMExtraBold = bodyM;
-  static TextStyle bodyMMedium = bodyM.copyWith(fontWeight: FontWeight.w500);
-  static TextStyle bodyMSemiboldUnderline = bodyM.copyWith(
+  static TextStyle bodyMMedium = GoogleFonts.urbanist(
+    fontWeight: FontWeight.w500,
+    fontSize: 16,
+    height: 24 / 16,
+    color: defaultColor,
+  );
+  static TextStyle bodyMSemiboldUnderline = GoogleFonts.urbanist(
     fontWeight: FontWeight.w600,
     decoration: TextDecoration.underline,
+    fontSize: 16,
+    height: 24 / 16,
+    color: defaultColor,
   );
 
-  static TextStyle bodyS = GoogleFonts.urbanist(
+  static TextStyle bodySExtraBold = GoogleFonts.urbanist(
     fontWeight: FontWeight.w800,
     fontSize: 14,
     height: 20 / 14,
     color: defaultColor,
   );
-  static TextStyle bodySExtraBold = bodyS;
-  static TextStyle bodySMedium = bodyS.copyWith(fontWeight: FontWeight.w500);
-  static TextStyle bodySSemiboldUnderline = bodyS.copyWith(
+  static TextStyle bodySMedium = GoogleFonts.urbanist(
+    fontWeight: FontWeight.w500,
+    fontSize: 14,
+    height: 20 / 14,
+    color: defaultColor,
+  );
+  static TextStyle bodySSemiboldUnderline = GoogleFonts.urbanist(
     fontWeight: FontWeight.w600,
     decoration: TextDecoration.underline,
+    fontSize: 14,
+    height: 20 / 14,
+    color: defaultColor,
   );
 
-  static TextStyle bodyXS = GoogleFonts.urbanist(
+  static TextStyle bodyXSExtraBold = GoogleFonts.urbanist(
     fontWeight: FontWeight.w800,
     fontSize: 12,
     height: 16 / 12,
     color: defaultColor,
   );
-  static TextStyle bodyXSExtraBold = bodyXS;
-  static TextStyle bodyXSMedium = bodyXS.copyWith(fontWeight: FontWeight.w500);
-  static TextStyle bodyXSSemiboldUnderline = bodyXS.copyWith(
+  static TextStyle bodyXSMedium = GoogleFonts.urbanist(
+    fontWeight: FontWeight.w500,
+    fontSize: 12,
+    height: 16 / 12,
+    color: defaultColor,
+  );
+  static TextStyle bodyXSSemiboldUnderline = GoogleFonts.urbanist(
     fontWeight: FontWeight.w600,
     decoration: TextDecoration.underline,
+    fontSize: 12,
+    height: 16 / 12,
+    color: defaultColor,
   );
 
-  static TextStyle body2XS = GoogleFonts.urbanist(
+  static TextStyle body2XSExtraBold = GoogleFonts.urbanist(
     fontWeight: FontWeight.w800,
     fontSize: 10,
     height: 14 / 10,
     color: defaultColor,
   );
-  static TextStyle body2XSExtraBold = body2XS;
-  static TextStyle body2XSMedium = body2XS.copyWith(
+  static TextStyle body2XSMedium = GoogleFonts.urbanist(
     fontWeight: FontWeight.w500,
+    fontSize: 10,
+    height: 14 / 10,
+    color: defaultColor,
   );
-  static TextStyle body2XSSemiboldUnderline = body2XS.copyWith(
+  static TextStyle body2XSSemiboldUnderline = GoogleFonts.urbanist(
     fontWeight: FontWeight.w600,
     decoration: TextDecoration.underline,
+    fontSize: 10,
+    height: 14 / 10,
+    color: defaultColor,
   );
 }

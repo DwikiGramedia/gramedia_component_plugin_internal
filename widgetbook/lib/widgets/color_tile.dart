@@ -26,7 +26,7 @@ class ColorTile extends StatelessWidget {
       ),
       child: PapyrusText(
         colorName,
-        style: PapyrusFont.body2XS.copyWith(
+        style: PapyrusFont.body2XSExtraBold.copyWith(
           color: darkText ? PapyrusColors.neutral700 : PapyrusColors.white,
         ),
       ),
