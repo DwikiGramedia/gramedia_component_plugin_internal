@@ -5,7 +5,7 @@ import 'package:papilus_component_gramedia/v2/foundation/foundation.dart';
 class PapyrusButton extends StatelessWidget {
   const PapyrusButton({
     super.key,
-    required this.label,
+    this.label,
     this.onTap,
     this.isLoading = false,
     this.backgroundColor,
@@ -14,10 +14,12 @@ class PapyrusButton extends StatelessWidget {
     this.loadingColor,
     this.isDisabled = false,
     this.icon,
+    this.iconSize = 20,
+    this.borderRadius,
   });
 
   final VoidCallback? onTap;
-  final String label;
+  final String? label;
   final bool isLoading;
   final Color? backgroundColor;
   final Color? textColor;
@@ -25,15 +27,19 @@ class PapyrusButton extends StatelessWidget {
   final Color? loadingColor;
   final bool isDisabled;
   final IconData? icon;
+  final double iconSize;
+  final BorderRadius? borderRadius;
 
   const PapyrusButton.secondary({
     Key? key,
-    required String label,
+    String? label,
     VoidCallback? onTap,
     bool isLoading = false,
     Color? loadingColor,
     bool isDisabled = false,
     IconData? icon,
+    double iconSize = 20,
+    BorderRadius? borderRadius,
   }) : this(
           key: key,
           onTap: onTap,
@@ -45,16 +51,20 @@ class PapyrusButton extends StatelessWidget {
           borderColor: PapyrusColors.neutral150,
           isDisabled: isDisabled,
           icon: icon,
+          iconSize: iconSize,
+          borderRadius: borderRadius,
         );
 
   PapyrusButton.tertiery({
     Key? key,
-    required String label,
+    String? label,
     VoidCallback? onTap,
     bool isLoading = false,
     Color? loadingColor,
     bool isDisabled = false,
     IconData? icon,
+    double iconSize = 20,
+    BorderRadius? borderRadius,
   }) : this(
           key: key,
           onTap: onTap,
@@ -66,6 +76,8 @@ class PapyrusButton extends StatelessWidget {
           borderColor: PapyrusColors.white.withOpacity(0),
           isDisabled: isDisabled,
           icon: icon,
+          iconSize: iconSize,
+          borderRadius: borderRadius,
         );
 
   @override
@@ -75,7 +87,7 @@ class PapyrusButton extends StatelessWidget {
         ? PapyrusColors.neutral200
         : backgroundColor ?? PapyrusColors.brand500;
 
-    return InkWell(
+    return GestureDetector(
       onTap: isLoading || isDisabled ? null : onTap,
       child: Container(
         width: double.infinity,
@@ -84,7 +96,7 @@ class PapyrusButton extends StatelessWidget {
         decoration: ShapeDecoration(
           color: buttonColor,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: borderRadius ?? BorderRadius.circular(12),
             side: BorderSide(color: borderColor ?? buttonColor),
           ),
         ),
@@ -100,27 +112,28 @@ class PapyrusButton extends StatelessWidget {
             : Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  if (icon != null) ...[
+                  if (icon != null)
                     Icon(
                       icon,
-                      size: 20,
+                      size: iconSize,
                       color: isDisabled && textColor != null
                           ? PapyrusColors.neutral200
                           : textColor ?? PapyrusColors.white,
                     ),
+                  if (label != null) ...[
                     const SizedBox(width: 5),
-                  ],
-                  AutoSizeText(
-                    label,
-                    textAlign: TextAlign.center,
-                    maxLines: 1,
-                    minFontSize: 10,
-                    style: PapyrusFont.bodySExtraBold.copyWith(
-                      color: isDisabled && textColor != null
-                          ? PapyrusColors.neutral200
-                          : textColor ?? PapyrusColors.white,
+                    AutoSizeText(
+                      label!,
+                      textAlign: TextAlign.center,
+                      maxLines: 1,
+                      minFontSize: 10,
+                      style: PapyrusFont.bodySExtraBold.copyWith(
+                        color: isDisabled && textColor != null
+                            ? PapyrusColors.neutral200
+                            : textColor ?? PapyrusColors.white,
+                      ),
                     ),
-                  ),
+                  ]
                 ],
               ),
       ),

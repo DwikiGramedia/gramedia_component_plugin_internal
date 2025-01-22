@@ -52,6 +52,43 @@ Widget buildButton(BuildContext context) {
             onTap: () {},
           ),
           const SizedBox(height: PapyrusSpacing.s16),
+          // Active Button With Icon
+          PapyrusText(
+            'Active Button With Icon',
+            style: PapyrusFont.h6,
+            textAlign: TextAlign.start,
+          ),
+          const SizedBox(height: PapyrusSpacing.s8),
+          PapyrusButton(
+            label: context.knobs.string(
+              label: 'Active Button Primary With Icon',
+              initialValue: 'Primary Button With Icon',
+            ),
+            icon: Icons.add,
+            isLoading: false,
+            onTap: () {},
+          ),
+          const SizedBox(height: PapyrusSpacing.s4),
+          PapyrusButton.secondary(
+            label: context.knobs.string(
+              label: 'Active Button Secondary With Icon',
+              initialValue: 'Secondary Button With Icon',
+            ),
+            icon: Icons.add,
+            isLoading: false,
+            onTap: () {},
+          ),
+          const SizedBox(height: PapyrusSpacing.s4),
+          PapyrusButton.tertiery(
+            label: context.knobs.string(
+              label: 'Active Button Tertiery With Icon',
+              initialValue: 'Tertiery Button With Icon',
+            ),
+            icon: Icons.add,
+            isLoading: false,
+            onTap: () {},
+          ),
+          const SizedBox(height: PapyrusSpacing.s16),
           // Disabled Button
           PapyrusText(
             'Disabled Button',
@@ -82,6 +119,43 @@ Widget buildButton(BuildContext context) {
               label: 'Disabled Button Tertiery',
               initialValue: 'Tertiery Button',
             ),
+            isLoading: false,
+            onTap: null,
+          ),
+          const SizedBox(height: PapyrusSpacing.s16),
+          // Disabled Button
+          PapyrusText(
+            'Disabled Button With Icon',
+            style: PapyrusFont.h6,
+            textAlign: TextAlign.start,
+          ),
+          const SizedBox(height: PapyrusSpacing.s8),
+          PapyrusButton(
+            label: context.knobs.string(
+              label: 'Disable Button Primary With Icon',
+              initialValue: 'Primary Button With Icon',
+            ),
+            icon: Icons.add,
+            isLoading: false,
+            onTap: null,
+          ),
+          const SizedBox(height: PapyrusSpacing.s4),
+          PapyrusButton.secondary(
+            label: context.knobs.string(
+              label: 'Disable Button Secondary With Icon',
+              initialValue: 'Secondary Button With Icon',
+            ),
+            icon: Icons.add,
+            isLoading: false,
+            onTap: null,
+          ),
+          const SizedBox(height: PapyrusSpacing.s4),
+          PapyrusButton.tertiery(
+            label: context.knobs.string(
+              label: 'Disable Button Tertiery With Icon',
+              initialValue: 'Tertiery Button With Icon',
+            ),
+            icon: Icons.add,
             isLoading: false,
             onTap: null,
           ),
