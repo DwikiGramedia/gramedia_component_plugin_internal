@@ -19,6 +19,7 @@ dependencies:
   flutter_hooks: ^0.20.5
   form_validator: ^2.1.1
   auto_size_text: ^3.0.0
+  another_flushbar: ^1.12.30
 
 dev_dependencies:
   flutter_test:
