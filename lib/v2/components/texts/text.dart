@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:papilus_component_gramedia/v2/foundation/foundation.dart';
 
 class PapyrusText extends StatelessWidget {
   final String data;
@@ -17,6 +18,39 @@ class PapyrusText extends StatelessWidget {
     this.maxLines = 1,
     this.color,
   });
+
+  factory PapyrusText.bodyLExtraBold(String data) =>
+      PapyrusText(data, style: PapyrusFont.bodyLExtraBold);
+  factory PapyrusText.bodyMExtraBold(String data) =>
+      PapyrusText(data, style: PapyrusFont.bodyMExtraBold);
+  factory PapyrusText.bodySExtraBold(String data) =>
+      PapyrusText(data, style: PapyrusFont.bodyMExtraBold);
+  factory PapyrusText.bodyXSExtraBold(String data) =>
+      PapyrusText(data, style: PapyrusFont.bodyMExtraBold);
+  factory PapyrusText.body2XSExtraBold(String data) =>
+      PapyrusText(data, style: PapyrusFont.bodyMExtraBold);
+
+  factory PapyrusText.bodyLMedium(String data) =>
+      PapyrusText(data, style: PapyrusFont.bodyLMedium);
+  factory PapyrusText.bodyMMedium(String data) =>
+      PapyrusText(data, style: PapyrusFont.bodyMMedium);
+  factory PapyrusText.bodySMedium(String data) =>
+      PapyrusText(data, style: PapyrusFont.bodyMMedium);
+  factory PapyrusText.bodyXSMedium(String data) =>
+      PapyrusText(data, style: PapyrusFont.bodyMMedium);
+  factory PapyrusText.body2XSMedium(String data) =>
+      PapyrusText(data, style: PapyrusFont.bodyMMedium);
+
+  factory PapyrusText.bodyLSemiboldUnderline(String data) =>
+      PapyrusText(data, style: PapyrusFont.bodyLSemiboldUnderline);
+  factory PapyrusText.bodyMSemiboldUnderline(String data) =>
+      PapyrusText(data, style: PapyrusFont.bodyMSemiboldUnderline);
+  factory PapyrusText.bodySSemiboldUnderline(String data) =>
+      PapyrusText(data, style: PapyrusFont.bodyMSemiboldUnderline);
+  factory PapyrusText.bodyXSSemiboldUnderline(String data) =>
+      PapyrusText(data, style: PapyrusFont.bodyMSemiboldUnderline);
+  factory PapyrusText.body2XSSemiboldUnderline(String data) =>
+      PapyrusText(data, style: PapyrusFont.bodyMSemiboldUnderline);
 
   @override
   Widget build(BuildContext context) {
