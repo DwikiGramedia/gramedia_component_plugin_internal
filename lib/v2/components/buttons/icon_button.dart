@@ -80,7 +80,6 @@ class PapyrusIconButton extends PapyrusButton {
         minWidth: width,
       ),
       child: PapyrusButton(
-        label: label,
         backgroundColor: backgroundColor,
         borderColor: borderColor,
         isDisabled: isDisabled,

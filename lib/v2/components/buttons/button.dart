@@ -32,7 +32,7 @@ class PapyrusButton extends StatelessWidget {
 
   const PapyrusButton.secondary({
     Key? key,
-    String? label,
+    required String? label,
     VoidCallback? onTap,
     bool isLoading = false,
     Color? loadingColor,
@@ -57,7 +57,7 @@ class PapyrusButton extends StatelessWidget {
 
   PapyrusButton.tertiery({
     Key? key,
-    String? label,
+    required String? label,
     VoidCallback? onTap,
     bool isLoading = false,
     Color? loadingColor,
