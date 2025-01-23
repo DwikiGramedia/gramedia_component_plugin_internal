@@ -11,12 +11,13 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:widgetbook/widgetbook.dart' as _i1;
 import 'package:widgetbook_workspace/views/animation_view.dart' as _i2;
-import 'package:widgetbook_workspace/views/button_view.dart' as _i3;
-import 'package:widgetbook_workspace/views/color_view.dart' as _i7;
-import 'package:widgetbook_workspace/views/icon_button_view.dart' as _i4;
-import 'package:widgetbook_workspace/views/snackbar_view.dart' as _i6;
-import 'package:widgetbook_workspace/views/text_field_view.dart' as _i5;
-import 'package:widgetbook_workspace/views/typography_view.dart' as _i8;
+import 'package:widgetbook_workspace/views/bottom_sheet_view.dart' as _i3;
+import 'package:widgetbook_workspace/views/button_view.dart' as _i4;
+import 'package:widgetbook_workspace/views/color_view.dart' as _i8;
+import 'package:widgetbook_workspace/views/icon_button_view.dart' as _i5;
+import 'package:widgetbook_workspace/views/snackbar_view.dart' as _i7;
+import 'package:widgetbook_workspace/views/text_field_view.dart' as _i6;
+import 'package:widgetbook_workspace/views/typography_view.dart' as _i9;
 
 final directories = <_i1.WidgetbookNode>[
   _i1.WidgetbookFolder(
@@ -38,20 +39,32 @@ final directories = <_i1.WidgetbookNode>[
             ],
           ),
           _i1.WidgetbookFolder(
+            name: 'bottom_sheets',
+            children: [
+              _i1.WidgetbookLeafComponent(
+                name: 'PapyrusBottomSheet',
+                useCase: _i1.WidgetbookUseCase(
+                  name: 'Default',
+                  builder: _i3.buildButton,
+                ),
+              )
+            ],
+          ),
+          _i1.WidgetbookFolder(
             name: 'buttons',
             children: [
               _i1.WidgetbookLeafComponent(
                 name: 'PapyrusButton',
                 useCase: _i1.WidgetbookUseCase(
                   name: 'Default',
-                  builder: _i3.buildButton,
+                  builder: _i4.buildButton,
                 ),
               ),
               _i1.WidgetbookLeafComponent(
                 name: 'PapyrusIconButton',
                 useCase: _i1.WidgetbookUseCase(
                   name: 'Default',
-                  builder: _i4.buildButton,
+                  builder: _i5.buildButton,
                 ),
               ),
             ],
@@ -63,7 +76,7 @@ final directories = <_i1.WidgetbookNode>[
                 name: 'PapyrusTextField',
                 useCase: _i1.WidgetbookUseCase(
                   name: 'Default',
-                  builder: _i5.buildButton,
+                  builder: _i6.buildButton,
                 ),
               )
             ],
@@ -75,7 +88,7 @@ final directories = <_i1.WidgetbookNode>[
                 name: 'PapyrusSnackbar',
                 useCase: _i1.WidgetbookUseCase(
                   name: 'Default',
-                  builder: _i6.buildButton,
+                  builder: _i7.buildButton,
                 ),
               )
             ],
@@ -89,14 +102,14 @@ final directories = <_i1.WidgetbookNode>[
             name: 'PapyrusColors',
             useCase: _i1.WidgetbookUseCase(
               name: 'Default',
-              builder: _i7.buildButton,
+              builder: _i8.buildButton,
             ),
           ),
           _i1.WidgetbookLeafComponent(
             name: 'PapyrusFont',
             useCase: _i1.WidgetbookUseCase(
               name: 'Default',
-              builder: _i8.buildPapyrusFont,
+              builder: _i9.buildPapyrusFont,
             ),
           ),
         ],
