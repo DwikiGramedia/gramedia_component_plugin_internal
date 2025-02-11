@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:papilus_component_gramedia/v2/components/animations/loading_indicator.dart';
 
 class PapyrusImage extends StatelessWidget {
   final String src;
@@ -29,29 +30,16 @@ class PapyrusImage extends StatelessWidget {
         src,
         height: height ?? 160,
         width: width ?? 120,
-        errorBuilder: (context, error, stackTrace) {
-          return Image.asset(
-            'assets/image-2.png',
-            height: height ?? 160,
-            width: width ?? 120,
-          );
-        },
       );
     }
     return Image.network(
       src,
-      errorBuilder: (context, error, stackTrace) {
-        return Image.asset(
-          'assets/image-2.png',
-          height: height ?? 160,
-          width: width ?? 120,
-        );
-      },
       loadingBuilder: (context, child, loadingProgress) {
-        return Image.asset(
-          'assets/image-2.png',
+        return Container(
           height: height ?? 160,
           width: width ?? 120,
+          alignment: Alignment.center,
+          child: const PapyrusProgressIndicator(),
         );
       },
       height: height ?? 160,
