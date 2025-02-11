@@ -53,8 +53,8 @@ flutter:
         pluginClass: somePluginClass
     # -------------------
   assets:
-    - assets/image-2.png
     - assets/
+    - assets/images/
     - assets/bottom_nav/gramedia/selected/
     - assets/bottom_nav/gramedia/unselected/
     - assets/bottom_nav/kategori/selected/
