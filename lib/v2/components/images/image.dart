@@ -35,12 +35,10 @@ class PapyrusImage extends StatelessWidget {
     return Image.network(
       src,
       loadingBuilder: (context, child, loadingProgress) {
-        return Container(
-          height: height ?? 160,
-          width: width ?? 120,
-          alignment: Alignment.center,
-          child: const PapyrusProgressIndicator(),
-        );
+        if (loadingProgress == null) {
+          return child;
+        }
+        return const Center(child: PapyrusProgressIndicator());
       },
       height: height ?? 160,
       width: width ?? 120,
