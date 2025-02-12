@@ -54,7 +54,7 @@ flutter:
     # -------------------
   assets:
     - assets/
-    - assets/images/
+    - assets/image-2.png
     - assets/bottom_nav/gramedia/selected/
     - assets/bottom_nav/gramedia/unselected/
     - assets/bottom_nav/kategori/selected/
