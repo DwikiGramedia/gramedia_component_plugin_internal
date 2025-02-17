@@ -87,55 +87,60 @@ class PapyrusButton extends StatelessWidget {
         ? PapyrusColors.neutral200
         : backgroundColor ?? PapyrusColors.brand500;
 
-    return GestureDetector(
-      onTap: isLoading || isDisabled ? null : onTap,
-      child: Container(
-        width: double.infinity,
-        height: 44,
-        alignment: Alignment.center,
-        decoration: ShapeDecoration(
-          color: buttonColor,
-          shape: RoundedRectangleBorder(
-            borderRadius: borderRadius ?? BorderRadius.circular(12),
-            side: BorderSide(color: borderColor ?? buttonColor),
+    return Material(
+      color: Colors.transparent, // Transparent to show ripple properly
+      child: Ink(
+        decoration: BoxDecoration(
+          color: buttonColor, // Background color of the button
+          borderRadius: borderRadius ?? BorderRadius.circular(12),
+          border: Border.all(color: borderColor ?? buttonColor),
+        ),
+        child: InkWell(
+          onTap: isLoading || isDisabled ? null : onTap,
+          borderRadius: borderRadius ?? BorderRadius.circular(12),
+          splashColor: Colors.white.withOpacity(0.3), // Ripple color
+          child: Container(
+            width: double.infinity,
+            height: 44,
+            alignment: Alignment.center,
+            child: isLoading
+                ? SizedBox(
+                    width: 20,
+                    height: 20,
+                    child: CircularProgressIndicator(
+                      color: loadingColor ?? PapyrusColors.white,
+                      strokeWidth: 2,
+                    ),
+                  )
+                : Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      if (icon != null)
+                        Icon(
+                          icon,
+                          size: iconSize,
+                          color: isDisabled && textColor != null
+                              ? PapyrusColors.neutral200
+                              : textColor ?? PapyrusColors.white,
+                        ),
+                      if (label != null) ...[
+                        const SizedBox(width: 5),
+                        AutoSizeText(
+                          label!,
+                          textAlign: TextAlign.center,
+                          maxLines: 1,
+                          minFontSize: 10,
+                          style: PapyrusFont.bodySExtraBold.copyWith(
+                            color: isDisabled && textColor != null
+                                ? PapyrusColors.neutral200
+                                : textColor ?? PapyrusColors.white,
+                          ),
+                        ),
+                      ]
+                    ],
+                  ),
           ),
         ),
-        child: isLoading
-            ? SizedBox(
-                width: 20,
-                height: 20,
-                child: CircularProgressIndicator(
-                  color: loadingColor ?? PapyrusColors.white,
-                  strokeWidth: 2,
-                ),
-              )
-            : Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  if (icon != null)
-                    Icon(
-                      icon,
-                      size: iconSize,
-                      color: isDisabled && textColor != null
-                          ? PapyrusColors.neutral200
-                          : textColor ?? PapyrusColors.white,
-                    ),
-                  if (label != null) ...[
-                    const SizedBox(width: 5),
-                    AutoSizeText(
-                      label!,
-                      textAlign: TextAlign.center,
-                      maxLines: 1,
-                      minFontSize: 10,
-                      style: PapyrusFont.bodySExtraBold.copyWith(
-                        color: isDisabled && textColor != null
-                            ? PapyrusColors.neutral200
-                            : textColor ?? PapyrusColors.white,
-                      ),
-                    ),
-                  ]
-                ],
-              ),
       ),
     );
   }
