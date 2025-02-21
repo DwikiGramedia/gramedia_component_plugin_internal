@@ -17,6 +17,7 @@ class PapyrusAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.elevation = 0,
     this.systemOverlayStyle,
     this.bottom,
+    this.titleSpacing,
   });
 
   final String title;
@@ -30,6 +31,7 @@ class PapyrusAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double elevation;
   final SystemUiOverlayStyle? systemOverlayStyle;
   final PreferredSizeWidget? bottom;
+  final double? titleSpacing;
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
@@ -51,7 +53,7 @@ class PapyrusAppBar extends StatelessWidget implements PreferredSizeWidget {
       automaticallyImplyLeading: showLeading,
       leading: !showLeading ? null : leading,
       leadingWidth: 60,
-      titleSpacing: 0,
+      titleSpacing: titleSpacing,
       actions: actions,
       elevation: elevation,
       systemOverlayStyle: systemOverlayStyle ?? SystemUiOverlayStyle.dark,
