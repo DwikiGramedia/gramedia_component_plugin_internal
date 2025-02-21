@@ -37,10 +37,16 @@ class PapyrusAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: PapyrusText(title, style: PapyrusFont.h4),
+      backgroundColor: Colors.white,
+      forceMaterialTransparency: true,
+      title: PapyrusText(
+        title,
+        style: PapyrusFont.bodyLExtraBold,
+        maxLines: 2,
+        textAlign: TextAlign.start,
+      ),
       centerTitle: centerTitle,
       titleTextStyle: titleTextStyle,
-      backgroundColor: PapyrusColors.white,
       foregroundColor: PapyrusColors.neutral700,
       automaticallyImplyLeading: showLeading,
       leading: !showLeading ? null : leading,
