@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:papilus_component_gramedia/v2/foundation/colors.dart';
 import 'package:papilus_component_gramedia/v2/foundation/radius.dart';
 
-class PapyrusBottomSheet extends StatelessWidget {
+class PapyrusBottomSheet<T> extends StatelessWidget {
   const PapyrusBottomSheet({
     super.key,
     required this.content,
@@ -14,7 +14,7 @@ class PapyrusBottomSheet extends StatelessWidget {
   final bool enableDrag;
   final bool isDismissible;
 
-  Future<bool?> show(BuildContext context) {
+  Future<T?> show(BuildContext context) {
     var mediaQuery = MediaQuery.of(context);
 
     return showModalBottomSheet(
