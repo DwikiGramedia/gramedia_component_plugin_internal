@@ -1,5 +1,7 @@
+import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:papilus_component_gramedia/v2/components/buttons/icon_button.dart';
 import 'package:papilus_component_gramedia/v2/components/texts/text.dart';
 import 'package:papilus_component_gramedia/v2/foundation/foundation.dart';
 
@@ -51,7 +53,15 @@ class PapyrusAppBar extends StatelessWidget implements PreferredSizeWidget {
       titleTextStyle: titleTextStyle,
       foregroundColor: PapyrusColors.neutral700,
       automaticallyImplyLeading: showLeading,
-      leading: !showLeading ? null : leading,
+      leading: !showLeading
+          ? PapyrusIconButton.tertiery(
+              width: 25,
+              height: 25,
+              iconSize: 25,
+              icon: FluentIcons.arrow_left_16_filled,
+              onTap: () => Navigator.pop(context),
+            )
+          : leading,
       leadingWidth: 60,
       titleSpacing: titleSpacing,
       actions: actions,
