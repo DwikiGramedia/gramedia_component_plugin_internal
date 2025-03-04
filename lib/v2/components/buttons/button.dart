@@ -14,6 +14,7 @@ class PapyrusButton extends StatelessWidget {
     this.loadingColor,
     this.isDisabled = false,
     this.icon,
+    this.customIcon,
     this.iconSize = 20,
     this.borderRadius,
   });
@@ -27,6 +28,7 @@ class PapyrusButton extends StatelessWidget {
   final Color? loadingColor;
   final bool isDisabled;
   final IconData? icon;
+  final Widget? customIcon;
   final double iconSize;
   final BorderRadius? borderRadius;
 
@@ -38,6 +40,7 @@ class PapyrusButton extends StatelessWidget {
     Color? loadingColor,
     bool isDisabled = false,
     IconData? icon,
+    Widget? customIcon,
     double iconSize = 20,
     BorderRadius? borderRadius,
   }) : this(
@@ -51,6 +54,7 @@ class PapyrusButton extends StatelessWidget {
           borderColor: PapyrusColors.neutral150,
           isDisabled: isDisabled,
           icon: icon,
+          customIcon: customIcon,
           iconSize: iconSize,
           borderRadius: borderRadius,
         );
@@ -63,6 +67,7 @@ class PapyrusButton extends StatelessWidget {
     Color? loadingColor,
     bool isDisabled = false,
     IconData? icon,
+    Widget? customIcon,
     double iconSize = 20,
     BorderRadius? borderRadius,
   }) : this(
@@ -76,6 +81,7 @@ class PapyrusButton extends StatelessWidget {
           borderColor: PapyrusColors.white.withOpacity(0),
           isDisabled: isDisabled,
           icon: icon,
+          customIcon: customIcon,
           iconSize: iconSize,
           borderRadius: borderRadius,
         );
@@ -122,6 +128,12 @@ class PapyrusButton extends StatelessWidget {
                           color: isDisabled && textColor != null
                               ? PapyrusColors.neutral200
                               : textColor ?? PapyrusColors.white,
+                        ),
+                      if (customIcon != null)
+                        SizedBox(
+                          height: iconSize,
+                          width: iconSize,
+                          child: customIcon!,
                         ),
                       if (label != null) ...[
                         const SizedBox(width: 5),
