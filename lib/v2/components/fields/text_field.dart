@@ -26,6 +26,8 @@ class PapyrusTextField extends HookWidget {
     this.isPasswordError = false,
     this.autovalidateMode = true,
     this.onTapOutside,
+    this.maxLength,
+    this.maxLines,
   });
 
   final TextEditingController controller;
@@ -48,6 +50,8 @@ class PapyrusTextField extends HookWidget {
   final bool isPasswordError;
   final bool autovalidateMode;
   final Function(PointerDownEvent?)? onTapOutside;
+  final int? maxLength;
+  final int? maxLines;
 
   @override
   Widget build(BuildContext context) {
@@ -55,6 +59,8 @@ class PapyrusTextField extends HookWidget {
 
     return TextFormField(
       onTapOutside: onTapOutside,
+      maxLength: maxLength,
+      maxLines: maxLines,
       key: key,
       onTap: onTap,
       obscureText: isObscure,
