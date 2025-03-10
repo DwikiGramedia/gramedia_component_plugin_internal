@@ -19,6 +19,7 @@ class PapyrusAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.systemOverlayStyle,
     this.bottom,
     this.titleSpacing,
+    this.maxLines,
   });
 
   final String title;
@@ -32,6 +33,7 @@ class PapyrusAppBar extends StatelessWidget implements PreferredSizeWidget {
   final SystemUiOverlayStyle? systemOverlayStyle;
   final PreferredSizeWidget? bottom;
   final double? titleSpacing;
+  final int? maxLines;
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
@@ -44,7 +46,7 @@ class PapyrusAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: PapyrusText(
         title,
         style: PapyrusFont.bodyLExtraBold,
-        maxLines: 2,
+        maxLines: maxLines ?? 2,
         textAlign: TextAlign.start,
       ),
       centerTitle: centerTitle,
