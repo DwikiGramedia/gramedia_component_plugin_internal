@@ -12,7 +12,6 @@ class PapyrusAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.centerTitle = false,
     this.titleTextStyle,
     this.leading,
-    this.leadingColor,
     this.onLeadingPressed,
     this.actions,
     this.elevation = 0,
@@ -20,13 +19,13 @@ class PapyrusAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.bottom,
     this.titleSpacing,
     this.maxLines,
+    this.showLeading = true,
   });
 
   final String title;
   final bool centerTitle;
   final TextStyle? titleTextStyle;
   final Widget? leading;
-  final Color? leadingColor;
   final void Function()? onLeadingPressed;
   final List<Widget>? actions;
   final double elevation;
@@ -34,6 +33,7 @@ class PapyrusAppBar extends StatelessWidget implements PreferredSizeWidget {
   final PreferredSizeWidget? bottom;
   final double? titleSpacing;
   final int? maxLines;
+  final bool showLeading;
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
@@ -52,14 +52,16 @@ class PapyrusAppBar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: centerTitle,
       titleTextStyle: titleTextStyle,
       foregroundColor: PapyrusColors.neutral700,
-      leading: leading ??
-          PapyrusIconButton.tertiery(
-            width: 25,
-            height: 25,
-            iconSize: 25,
-            icon: FluentIcons.arrow_left_16_filled,
-            onTap: () => Navigator.pop(context),
-          ),
+      leading: !showLeading
+          ? null
+          : leading ??
+              PapyrusIconButton.tertiery(
+                width: 25,
+                height: 25,
+                iconSize: 25,
+                icon: FluentIcons.arrow_left_16_filled,
+                onTap: onLeadingPressed,
+              ),
       leadingWidth: 60,
       titleSpacing: titleSpacing,
       actions: actions,
