@@ -52,7 +52,8 @@ class PapyrusSnackbar {
   }
 
   void onStatusChanged(FlushbarStatus? status) {
-    if (status?.name == 'DISMISSED') {
+    if (status == FlushbarStatus.DISMISSED ||
+        status == FlushbarStatus.IS_HIDING) {
       isShowing = false;
     }
   }
