@@ -1,5 +1,7 @@
+import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:papilus_component_gramedia/v2/components/buttons/icon_button.dart';
 import 'package:papilus_component_gramedia/v2/components/texts/text.dart';
 import 'package:papilus_component_gramedia/v2/foundation/foundation.dart';
 
@@ -9,29 +11,29 @@ class PapyrusAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.title = '',
     this.centerTitle = false,
     this.titleTextStyle,
-    this.showLeading = true,
     this.leading,
-    this.leadingColor,
     this.onLeadingPressed,
     this.actions,
     this.elevation = 0,
     this.systemOverlayStyle,
     this.bottom,
     this.titleSpacing,
+    this.maxLines,
+    this.showLeading = true,
   });
 
   final String title;
   final bool centerTitle;
   final TextStyle? titleTextStyle;
-  final bool showLeading;
   final Widget? leading;
-  final Color? leadingColor;
   final void Function()? onLeadingPressed;
   final List<Widget>? actions;
   final double elevation;
   final SystemUiOverlayStyle? systemOverlayStyle;
   final PreferredSizeWidget? bottom;
   final double? titleSpacing;
+  final int? maxLines;
+  final bool showLeading;
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
@@ -44,14 +46,22 @@ class PapyrusAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: PapyrusText(
         title,
         style: PapyrusFont.bodyLExtraBold,
-        maxLines: 2,
+        maxLines: maxLines ?? 2,
         textAlign: TextAlign.start,
       ),
       centerTitle: centerTitle,
       titleTextStyle: titleTextStyle,
       foregroundColor: PapyrusColors.neutral700,
-      automaticallyImplyLeading: showLeading,
-      leading: !showLeading ? null : leading,
+      leading: !showLeading
+          ? null
+          : leading ??
+              PapyrusIconButton.tertiery(
+                width: 25,
+                height: 25,
+                iconSize: 25,
+                icon: FluentIcons.arrow_left_16_filled,
+                onTap: onLeadingPressed,
+              ),
       leadingWidth: 60,
       titleSpacing: titleSpacing,
       actions: actions,

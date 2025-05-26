@@ -9,14 +9,15 @@ class GramediaChips extends StatelessWidget {
   GramediaColor foregroundColor;
   bool isSelected;
   Widget? icon;
-  GramediaChips(
-      {super.key,
-      required this.child,
-      this.onPressed,
-      this.foregroundColor = GramediaColor.white,
-      this.backgroundColor = GramediaColor.neutral700,
-      this.isSelected = false,
-      this.icon});
+  GramediaChips({
+    super.key,
+    required this.child,
+    this.onPressed,
+    this.foregroundColor = GramediaColor.white,
+    this.backgroundColor = GramediaColor.neutral700,
+    this.isSelected = false,
+    this.icon,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -26,22 +27,27 @@ class GramediaChips extends StatelessWidget {
       return ElevatedButton(
         key: key,
         style: ElevatedButton.styleFrom(
-            padding:
-                const EdgeInsets.only(left: 12, right: 16, top: 8, bottom: 8),
-            backgroundColor: colorHelper.getColor(backgroundColor),
-            foregroundColor: colorHelper.getColor(foregroundColor),
-            elevation: 0,
-            shape: isSelected
-                ? null
-                : RoundedRectangleBorder(
-                    side: isSelected
-                        ? BorderSide.none
-                        : BorderSide(
-                            color:
-                                colorHelper.getColor(GramediaColor.neutral150),
-                            width: 1.0),
-                    borderRadius: BorderRadius.circular(
-                        radiusHelper.radius(RadiusCase.radius_infinity)))),
+          padding:
+              const EdgeInsets.only(left: 12, right: 16, top: 8, bottom: 8),
+          backgroundColor: colorHelper.getColor(backgroundColor),
+          foregroundColor: colorHelper.getColor(foregroundColor),
+          elevation: 0,
+          shape: RoundedRectangleBorder(
+            side: BorderSide(
+              color: colorHelper.getColor(
+                isSelected
+                    ? GramediaColor.neutral700
+                    : GramediaColor.neutral150,
+              ),
+              width: 1.0,
+            ),
+            borderRadius: BorderRadius.circular(
+              radiusHelper.radius(
+                RadiusCase.radius_infinity,
+              ),
+            ),
+          ),
+        ),
         onPressed: onPressed,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,

@@ -7,11 +7,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 @widgetbook.UseCase(name: 'Default', type: PapyrusButton)
 Widget buildButton(BuildContext context) {
   return PapyrusScaffold(
-    appBar: const PapyrusAppBar(
-      title: 'Papyrus Button',
-      leadingColor: PapyrusColors.accent50,
-      centerTitle: true,
-    ),
+    appBar: const PapyrusAppBar(title: 'Papyrus Button', centerTitle: true),
     body: Padding(
       padding: const EdgeInsets.symmetric(horizontal: PapyrusSpacing.s16),
       child: ListView(
