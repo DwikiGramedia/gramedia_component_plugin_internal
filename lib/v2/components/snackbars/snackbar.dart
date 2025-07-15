@@ -13,6 +13,7 @@ class PapyrusSnackbar {
     String buttonMessage = 'Muat Ulang',
     Duration duration = const Duration(milliseconds: 3000),
   }) {
+    Future.delayed(const Duration(milliseconds: 2000), () => isShowing = false);
     if (isShowing) return;
     isShowing = true;
 
