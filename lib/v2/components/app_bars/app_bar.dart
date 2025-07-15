@@ -66,7 +66,6 @@ class PapyrusAppBar extends StatelessWidget implements PreferredSizeWidget {
       titleSpacing: titleSpacing,
       actions: actions,
       elevation: elevation,
-      systemOverlayStyle: systemOverlayStyle ?? SystemUiOverlayStyle.dark,
       bottom: bottom,
     );
   }
