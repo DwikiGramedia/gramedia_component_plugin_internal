@@ -26,7 +26,6 @@ Widget buildButton(BuildContext context) {
   return PapyrusScaffold(
     appBar: const PapyrusAppBar(
       title: 'Papyrus Icon Button',
-      leadingColor: PapyrusColors.accent50,
       centerTitle: true,
     ),
     body: Padding(

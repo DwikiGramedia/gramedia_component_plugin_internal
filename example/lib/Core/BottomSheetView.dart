@@ -1,6 +1,4 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:papilus_component_gramedia/GramediaComponent.dart';
 
 class BottomSheetView extends StatefulWidget {
@@ -13,7 +11,6 @@ class BottomSheetView extends StatefulWidget {
 class _BottomSheetViewState extends State<BottomSheetView> with Alert {
   @override
   Widget build(BuildContext context) {
-    final colorHelper = ColorHelper();
     return Scaffold(
       appBar: AppBar(),
       body: Center(
