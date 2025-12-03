@@ -6,7 +6,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
 @widgetbook.UseCase(name: 'Default', type: PapyrusIconButton)
 Widget buildButton(BuildContext context) {
-  IconData getIconsList() => context.knobs.list(
+  IconData getIconsList() => context.knobs.object.dropdown(
         label: 'Icons',
         options: [
           Icons.add,

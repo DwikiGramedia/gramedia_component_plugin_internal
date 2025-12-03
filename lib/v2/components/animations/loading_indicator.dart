@@ -22,11 +22,11 @@ class PapyrusProgressIndicator extends StatelessWidget {
         height: height ?? 48,
         child: value == null
             ? CircularProgressIndicator(
-                color: PapyrusColors.neutral500.withOpacity(0.5),
+                color: PapyrusColors.neutral500.withAlpha(128),
                 strokeWidth: 5,
               )
             : CircularProgressIndicator(
-                backgroundColor: PapyrusColors.neutral50.withOpacity(0.5),
+                backgroundColor: PapyrusColors.neutral50.withAlpha(128),
                 color: PapyrusColors.brand500,
                 strokeWidth: 5,
                 value: value,

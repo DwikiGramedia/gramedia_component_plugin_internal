@@ -67,7 +67,7 @@ class PapyrusIconButton extends PapyrusButton {
         loadingColor: PapyrusColors.brand500,
         backgroundColor: PapyrusColors.white,
         textColor: PapyrusColors.neutral700,
-        borderColor: PapyrusColors.white.withOpacity(0),
+        borderColor: PapyrusColors.white.withAlpha(0),
       );
 
   @override

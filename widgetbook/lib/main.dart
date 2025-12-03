@@ -16,18 +16,11 @@ class WidgetbookApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Widgetbook.material(
       addons: [
-        DeviceFrameAddon(
-          initialDevice: Devices.ios.iPhone13ProMax,
-          devices: [
-            Devices.ios.iPhone13,
-            Devices.ios.iPhone13ProMax,
-            Devices.ios.iPadPro11Inches,
-            Devices.android.mediumPhone,
-            Devices.android.bigPhone,
-          ],
-        ),
+        ViewportAddon(Viewports.all),
         InspectorAddon(),
         GridAddon(100),
+        AlignmentAddon(),
+        ZoomAddon(),
       ],
       directories: directories,
     );

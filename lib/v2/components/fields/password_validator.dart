@@ -40,10 +40,9 @@ class PapyrusPasswordValidator extends HookWidget {
 
 class _PasswordValidatorItem extends StatelessWidget {
   const _PasswordValidatorItem({
-    Key? key,
     required this.requirement,
     this.valid,
-  }) : super(key: key);
+  });
 
   final String requirement;
   final bool? valid;

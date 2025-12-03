@@ -29,67 +29,91 @@ final directories = <_i1.WidgetbookNode>[
           _i1.WidgetbookFolder(
             name: 'animations',
             children: [
-              _i1.WidgetbookLeafComponent(
+              _i1.WidgetbookComponent(
+                // Changed class
                 name: 'PapyrusDotIndicator',
-                useCase: _i1.WidgetbookUseCase(
-                  name: 'Default',
-                  builder: _i2.buildButton,
-                ),
+                useCases: [
+                  // Now a list
+                  _i1.WidgetbookUseCase(
+                    name: 'Default',
+                    builder: _i2.buildButton,
+                  ),
+                ],
               )
             ],
           ),
           _i1.WidgetbookFolder(
             name: 'bottom_sheets',
             children: [
-              _i1.WidgetbookLeafComponent(
+              _i1.WidgetbookComponent(
+                // Changed class
                 name: 'PapyrusBottomSheet',
-                useCase: _i1.WidgetbookUseCase(
-                  name: 'Default',
-                  builder: _i3.buildButton,
-                ),
+                useCases: [
+                  // Now a list
+                  _i1.WidgetbookUseCase(
+                    name: 'Default',
+                    builder: _i3.buildButton,
+                  ),
+                ],
               )
             ],
           ),
           _i1.WidgetbookFolder(
             name: 'buttons',
             children: [
-              _i1.WidgetbookLeafComponent(
+              _i1.WidgetbookComponent(
+                // Changed class
                 name: 'PapyrusButton',
-                useCase: _i1.WidgetbookUseCase(
-                  name: 'Default',
-                  builder: _i4.buildButton,
-                ),
+                useCases: [
+                  // Now a list
+                  _i1.WidgetbookUseCase(
+                    name: 'Default',
+                    builder: _i4.buildButton,
+                  ),
+                ],
               ),
-              _i1.WidgetbookLeafComponent(
+              _i1.WidgetbookComponent(
+                // Changed class
                 name: 'PapyrusIconButton',
-                useCase: _i1.WidgetbookUseCase(
-                  name: 'Default',
-                  builder: _i5.buildButton,
-                ),
+                useCases: [
+                  // Now a list
+                  _i1.WidgetbookUseCase(
+                    name: 'Default',
+                    builder: _i5.buildButton,
+                  ),
+                ],
               ),
             ],
           ),
           _i1.WidgetbookFolder(
             name: 'fields',
             children: [
-              _i1.WidgetbookLeafComponent(
+              _i1.WidgetbookComponent(
+                // Changed class
                 name: 'PapyrusTextField',
-                useCase: _i1.WidgetbookUseCase(
-                  name: 'Default',
-                  builder: _i6.buildButton,
-                ),
+                useCases: [
+                  // Now a list
+                  _i1.WidgetbookUseCase(
+                    name: 'Default',
+                    builder: _i6.buildButton,
+                  ),
+                ],
               )
             ],
           ),
           _i1.WidgetbookFolder(
             name: 'snackbars',
             children: [
-              _i1.WidgetbookLeafComponent(
+              _i1.WidgetbookComponent(
+                // Changed class
                 name: 'PapyrusSnackbar',
-                useCase: _i1.WidgetbookUseCase(
-                  name: 'Default',
-                  builder: _i7.buildButton,
-                ),
+                useCases: [
+                  // Now a list
+                  _i1.WidgetbookUseCase(
+                    name: 'Default',
+                    builder: _i7.buildButton,
+                  ),
+                ],
               )
             ],
           ),
@@ -98,19 +122,27 @@ final directories = <_i1.WidgetbookNode>[
       _i1.WidgetbookFolder(
         name: 'foundation',
         children: [
-          _i1.WidgetbookLeafComponent(
+          _i1.WidgetbookComponent(
+            // Changed class
             name: 'PapyrusColors',
-            useCase: _i1.WidgetbookUseCase(
-              name: 'Default',
-              builder: _i8.buildButton,
-            ),
+            useCases: [
+              // Now a list
+              _i1.WidgetbookUseCase(
+                name: 'Default',
+                builder: _i8.buildButton,
+              ),
+            ],
           ),
-          _i1.WidgetbookLeafComponent(
+          _i1.WidgetbookComponent(
+            // Changed class
             name: 'PapyrusFont',
-            useCase: _i1.WidgetbookUseCase(
-              name: 'Default',
-              builder: _i9.buildPapyrusFont,
-            ),
+            useCases: [
+              // Now a list
+              _i1.WidgetbookUseCase(
+                name: 'Default',
+                builder: _i9.buildPapyrusFont,
+              ),
+            ],
           ),
         ],
       ),

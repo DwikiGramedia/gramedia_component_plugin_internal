@@ -1,6 +1,5 @@
 import 'package:flutter/widgets.dart';
 import 'package:papilus_component_gramedia/v2/components/components.dart';
-import 'package:papilus_component_gramedia/v2/components/snackbars/snackbars.dart';
 import 'package:papilus_component_gramedia/v2/foundation/foundation.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 

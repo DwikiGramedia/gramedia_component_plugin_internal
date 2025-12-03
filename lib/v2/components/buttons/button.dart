@@ -78,7 +78,7 @@ class PapyrusButton extends StatelessWidget {
           loadingColor: PapyrusColors.brand500,
           backgroundColor: PapyrusColors.white,
           textColor: PapyrusColors.neutral700,
-          borderColor: PapyrusColors.white.withOpacity(0),
+          borderColor: PapyrusColors.white.withAlpha(0),
           isDisabled: isDisabled,
           icon: icon,
           customIcon: customIcon,
@@ -104,7 +104,7 @@ class PapyrusButton extends StatelessWidget {
         child: InkWell(
           onTap: isLoading || isDisabled ? null : onTap,
           borderRadius: borderRadius ?? BorderRadius.circular(12),
-          splashColor: Colors.white.withOpacity(0.3), // Ripple color
+          splashColor: Colors.white.withAlpha(77), // Ripple color
           child: Container(
             width: double.infinity,
             height: 44,

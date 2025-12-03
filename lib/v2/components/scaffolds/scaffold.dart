@@ -9,13 +9,13 @@ class PapyrusScaffold extends StatelessWidget {
   final bool withSafeArea;
 
   const PapyrusScaffold({
-    Key? key,
+    super.key,
     this.appBar,
     required this.body,
     this.backgroundColor = PapyrusColors.white,
     this.bottomNavigationBar,
     this.withSafeArea = true,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

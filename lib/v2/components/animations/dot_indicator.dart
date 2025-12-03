@@ -40,7 +40,7 @@ class PapyrusDotIndicator extends StatelessWidget {
               shape: BoxShape.circle,
             )
           : BoxDecoration(
-              color: PapyrusColors.neutral700.withOpacity(0.5),
+              color: PapyrusColors.neutral700.withAlpha(128),
               shape: BoxShape.circle,
             ),
     );
