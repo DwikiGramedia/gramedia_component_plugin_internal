@@ -13,10 +13,7 @@ Widget buildButton(BuildContext context) {
   var isAgree = ValueNotifier<bool>(true);
 
   return PapyrusScaffold(
-    appBar: const PapyrusAppBar(
-      title: 'Papyrus Colors',
-      centerTitle: true,
-    ),
+    appBar: const PapyrusAppBar(title: 'Papyrus Colors', centerTitle: true),
     body: Padding(
       padding: const EdgeInsets.symmetric(horizontal: PapyrusSpacing.s16),
       child: ListView(
@@ -67,7 +64,7 @@ Widget buildButton(BuildContext context) {
           const SizedBox(height: PapyrusSpacing.s16),
           ValueListenableBuilder(
             valueListenable: isAgree,
-            builder: (_, __, ___) {
+            builder: (_, _, _) {
               return PapyrusCheckbox(
                 isAgree: isAgree,
                 description: PapyrusText(
@@ -77,7 +74,7 @@ Widget buildButton(BuildContext context) {
                 ),
               );
             },
-          )
+          ),
         ],
       ),
     ),
