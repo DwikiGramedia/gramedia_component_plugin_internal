@@ -76,7 +76,7 @@ class PapyrusSegmentedWidget<T> extends StatefulWidget {
   final BoxDecoration? decoration;
   final BoxDecoration? thumbDecoration;
   final void Function(T value, double offset)? onOffsetScroll;
-  final ValueChanged<T> onValueChanged;
+  final void Function(dynamic)? onValueChanged;
   final void Function(T value, bool isHover)? onHoverSegment;
   final Duration duration;
   final Curve curve;
@@ -211,7 +211,7 @@ class _PapyrusSegmentedWidgetState<T> extends State<PapyrusSegmentedWidget<T>> {
     onTapItem(entry.first);
   }
 
-  void onTapItem(MapEntry<T?, Widget> item) {
+  void onTapItem(MapEntry<T, Widget> item) {
     // when the switch control is disabled
     // do nothing on tap item
     if (widget.isDisabled) {
@@ -221,19 +221,30 @@ class _PapyrusSegmentedWidgetState<T> extends State<PapyrusSegmentedWidget<T>> {
       setState(() => hasTouch = true);
     }
     setState(() => current = item.key);
+
     final List<T?> keys = widget.children.keys.toList();
+    final index = keys.indexOf(current);
+
+    if (index == -1) return;
+
     final currentOffset = sizeOffset<T>(
       current: current,
       items: keys,
       sizes: sizes.values.toList(),
     );
+
     differentOffset = currentOffset - offset;
     setState(() => offset = currentOffset);
-    final value = keys[keys.indexOf(current)] as T;
-    widget.onValueChanged(value);
+
+    final value = keys[index] as T;
+    debugPrint('onValueChanged type: ${widget.onValueChanged.runtimeType}');
+    debugPrint('value type: ${value.runtimeType}');
+    widget.onValueChanged?.call(value);
+
     if (widget.onOffsetScroll != null) {
       widget.onOffsetScroll!(value, differentOffset);
     }
+
     widget.controller?.value = current;
   }
 
