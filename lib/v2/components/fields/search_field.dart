@@ -31,48 +31,57 @@ class PapyrusSearchField extends StatefulWidget {
 }
 
 class _PapyrusSearchFieldState extends State<PapyrusSearchField> {
-  late SearchFieldState fieldState;
+  var colorStateValue = SearchFieldState.enable;
+
+  SearchFieldState setValueState() {
+    if (widget.isEnabled == false) {
+      return SearchFieldState.disable;
+    } else {
+      return SearchFieldState.enable;
+    }
+  }
 
   @override
   void initState() {
+    setState(() {
+      colorStateValue = setValueState();
+    });
     super.initState();
-    fieldState = widget.isEnabled
-        ? SearchFieldState.enable
-        : SearchFieldState.disable;
   }
 
-  // --- Simple replacement for textStyleState (same behavior, smaller) ---
-  TextStyle resolveTextStyle(
-    Set<WidgetState> states, {
-    required TextStyle base,
-  }) {
-    return base; // All states use same style in your original code
-  }
-
-  Color resolvePrefixColor() {
-    switch (fieldState) {
+  Color searchFieldColor(SearchFieldState state) {
+    switch (state) {
       case SearchFieldState.enable:
-      case SearchFieldState.focus:
         return PapyrusColors.neutral600;
       case SearchFieldState.error:
         return PapyrusColors.red50;
+      case SearchFieldState.focus:
+        return PapyrusColors.neutral600;
       case SearchFieldState.disable:
         return PapyrusColors.neutral150;
     }
   }
 
-  Widget? buildSuffixIcon() {
-    if (fieldState == SearchFieldState.focus) {
-      return IconButton(
-        icon: const Icon(FluentIcons.dismiss_circle_20_filled),
-        onPressed: () {
-          widget.controller.clear();
-          FocusScope.of(context).unfocus();
-          setState(() => fieldState = SearchFieldState.enable);
-        },
-      );
+  Widget? iconButton(SearchFieldState state) {
+    switch (state) {
+      case SearchFieldState.enable:
+        return null;
+      case SearchFieldState.error:
+        return null;
+      case SearchFieldState.focus:
+        return IconButton(
+          onPressed: () {
+            widget.controller.clear();
+            FocusScope.of(context).unfocus();
+            setState(() {
+              colorStateValue = SearchFieldState.enable;
+            });
+          },
+          icon: Icon(FluentIcons.dismiss_circle_20_filled),
+        );
+      case SearchFieldState.disable:
+        return null;
     }
-    return null;
   }
 
   @override
@@ -91,14 +100,25 @@ class _PapyrusSearchFieldState extends State<PapyrusSearchField> {
         onSubmitted: widget.onSubmitted,
         onTapAlwaysCalled: true,
         onTap: () {
-          widget.onTap?.call();
-          setState(() => fieldState = SearchFieldState.focus);
+          if (widget.onTap != null) {
+            widget.onTap!();
+          }
+          setState(() {
+            colorStateValue = SearchFieldState.focus;
+          });
         },
+
         decoration: InputDecoration(
           hintText: widget.hintText,
-          hintStyle: resolveTextStyle({}, base: baseHintStyle),
-          prefixIcon: Icon(Icons.search, color: resolvePrefixColor()),
-          suffixIcon: buildSuffixIcon(),
+          hintStyle: baseHintStyle,
+          prefixIcon: Icon(
+            Icons.search,
+            color: widget.isEnabled
+                ? searchFieldColor(colorStateValue)
+                : PapyrusColors.neutral150,
+          ),
+
+          suffixIcon: iconButton(colorStateValue),
           contentPadding: const EdgeInsets.symmetric(
             horizontal: 16,
             vertical: 12,
