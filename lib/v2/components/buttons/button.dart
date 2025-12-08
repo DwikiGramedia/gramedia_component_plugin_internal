@@ -17,6 +17,7 @@ class PapyrusButton extends StatelessWidget {
     this.customIcon,
     this.iconSize = 20,
     this.borderRadius,
+    this.isFullWidth = true,
   });
 
   final VoidCallback? onTap;
@@ -31,6 +32,7 @@ class PapyrusButton extends StatelessWidget {
   final Widget? customIcon;
   final double iconSize;
   final BorderRadius? borderRadius;
+  final bool isFullWidth;
 
   const PapyrusButton.secondary({
     Key? key,
@@ -43,21 +45,23 @@ class PapyrusButton extends StatelessWidget {
     Widget? customIcon,
     double iconSize = 20,
     BorderRadius? borderRadius,
+    bool isFullWidth = true,
   }) : this(
-          key: key,
-          onTap: onTap,
-          label: label,
-          isLoading: isLoading,
-          loadingColor: PapyrusColors.brand500,
-          backgroundColor: PapyrusColors.white,
-          textColor: PapyrusColors.neutral700,
-          borderColor: PapyrusColors.neutral150,
-          isDisabled: isDisabled,
-          icon: icon,
-          customIcon: customIcon,
-          iconSize: iconSize,
-          borderRadius: borderRadius,
-        );
+         key: key,
+         onTap: onTap,
+         label: label,
+         isLoading: isLoading,
+         loadingColor: PapyrusColors.brand500,
+         backgroundColor: PapyrusColors.white,
+         textColor: PapyrusColors.neutral700,
+         borderColor: PapyrusColors.neutral150,
+         isDisabled: isDisabled,
+         icon: icon,
+         customIcon: customIcon,
+         iconSize: iconSize,
+         borderRadius: borderRadius,
+         isFullWidth: isFullWidth,
+       );
 
   PapyrusButton.tertiery({
     Key? key,
@@ -70,21 +74,23 @@ class PapyrusButton extends StatelessWidget {
     Widget? customIcon,
     double iconSize = 20,
     BorderRadius? borderRadius,
+    bool isFullWidth = true,
   }) : this(
-          key: key,
-          onTap: onTap,
-          label: label,
-          isLoading: isLoading,
-          loadingColor: PapyrusColors.brand500,
-          backgroundColor: PapyrusColors.white,
-          textColor: PapyrusColors.neutral700,
-          borderColor: PapyrusColors.white.withAlpha(0),
-          isDisabled: isDisabled,
-          icon: icon,
-          customIcon: customIcon,
-          iconSize: iconSize,
-          borderRadius: borderRadius,
-        );
+         key: key,
+         onTap: onTap,
+         label: label,
+         isLoading: isLoading,
+         loadingColor: PapyrusColors.brand500,
+         backgroundColor: PapyrusColors.white,
+         textColor: PapyrusColors.neutral700,
+         borderColor: PapyrusColors.white.withAlpha(0),
+         isDisabled: isDisabled,
+         icon: icon,
+         customIcon: customIcon,
+         iconSize: iconSize,
+         borderRadius: borderRadius,
+         isFullWidth: isFullWidth,
+       );
 
   @override
   Widget build(BuildContext context) {
@@ -93,66 +99,64 @@ class PapyrusButton extends StatelessWidget {
         ? PapyrusColors.neutral200
         : backgroundColor ?? PapyrusColors.brand500;
 
-    return Material(
-      color: Colors.transparent, // Transparent to show ripple properly
-      child: Ink(
-        decoration: BoxDecoration(
-          color: buttonColor, // Background color of the button
-          borderRadius: borderRadius ?? BorderRadius.circular(12),
-          border: Border.all(color: borderColor ?? buttonColor),
-        ),
-        child: InkWell(
-          onTap: isLoading || isDisabled ? null : onTap,
-          borderRadius: borderRadius ?? BorderRadius.circular(12),
-          splashColor: Colors.white.withAlpha(77), // Ripple color
-          child: Container(
-            width: double.infinity,
-            height: 44,
-            alignment: Alignment.center,
-            child: isLoading
-                ? SizedBox(
-                    width: 20,
-                    height: 20,
-                    child: CircularProgressIndicator(
-                      color: loadingColor ?? PapyrusColors.white,
-                      strokeWidth: 2,
-                    ),
-                  )
-                : Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      if (icon != null)
-                        Icon(
-                          icon,
-                          size: iconSize,
-                          color: isDisabled && textColor != null
-                              ? PapyrusColors.neutral200
-                              : textColor ?? PapyrusColors.white,
-                        ),
-                      if (customIcon != null)
-                        SizedBox(
-                          height: iconSize,
-                          width: iconSize,
-                          child: customIcon!,
-                        ),
-                      if (label != null) ...[
-                        const SizedBox(width: 5),
-                        AutoSizeText(
-                          label!,
-                          textAlign: TextAlign.center,
-                          maxLines: 1,
-                          minFontSize: 10,
-                          style: PapyrusFont.bodySExtraBold.copyWith(
-                            color: isDisabled && textColor != null
-                                ? PapyrusColors.neutral200
-                                : textColor ?? PapyrusColors.white,
-                          ),
-                        ),
-                      ]
-                    ],
-                  ),
+    return SizedBox(
+      width: isFullWidth ? double.infinity : null,
+      height: 44,
+      child: TextButton(
+        onPressed: isLoading || isDisabled ? null : onTap,
+        style: TextButton.styleFrom(
+          backgroundColor: buttonColor,
+          shape: RoundedRectangleBorder(
+            borderRadius: borderRadius ?? BorderRadius.circular(12),
+            side: BorderSide(color: borderColor ?? buttonColor),
           ),
+          padding: isFullWidth
+              ? EdgeInsets.zero
+              : const EdgeInsets.symmetric(horizontal: 16),
         ),
+        child: isLoading
+            ? SizedBox(
+                width: 20,
+                height: 20,
+                child: CircularProgressIndicator(
+                  color: loadingColor ?? PapyrusColors.white,
+                  strokeWidth: 2,
+                ),
+              )
+            : Row(
+                mainAxisSize: isFullWidth ? MainAxisSize.max : MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  if (icon != null)
+                    Icon(
+                      icon,
+                      size: iconSize,
+                      color: isDisabled && textColor != null
+                          ? PapyrusColors.neutral200
+                          : textColor ?? PapyrusColors.white,
+                    ),
+                  if (customIcon != null)
+                    SizedBox(
+                      height: iconSize,
+                      width: iconSize,
+                      child: customIcon!,
+                    ),
+                  if (label != null) ...[
+                    const SizedBox(width: 5),
+                    AutoSizeText(
+                      label!,
+                      textAlign: TextAlign.center,
+                      maxLines: 1,
+                      minFontSize: 10,
+                      style: PapyrusFont.bodySExtraBold.copyWith(
+                        color: isDisabled && textColor != null
+                            ? PapyrusColors.neutral200
+                            : textColor ?? PapyrusColors.white,
+                      ),
+                    ),
+                  ],
+                ],
+              ),
       ),
     );
   }
