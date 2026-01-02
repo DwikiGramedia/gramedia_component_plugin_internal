@@ -9,18 +9,18 @@ import 'dart:ui';
 class PapyrusColors {
   static const white = Color(0xffFFFFFF);
 
-  static const neutral50 = Color(0xffF1F2F2);
-  static const neutral150 = Color(0xffD4D7D9);
-  static const neutral200 = Color(0xffC6C9CC);
-  static const neutral500 = Color(0xff71797F);
-  static const neutral600 = Color(0xff5A6166);
-  static const neutral700 = Color(0xff2D3033);
+  static const neutral50 = Color(0xffF1F1F1);
+  static const neutral150 = Color(0xffC1BDBD);
+  static const neutral200 = Color(0xff9D9899);
+  static const neutral500 = Color(0xff5A5556);
+  static const neutral600 = Color(0xff3B3839);
+  static const neutral700 = Color(0xff1E1B1B);
 
-  static const brand50 = Color(0xffE6EFF7);
-  static const brand200 = Color(0xff99BFDF);
-  static const brand500 = Color(0xff0060AE);
-  static const brand600 = Color(0xff004D8B);
-  static const brand700 = Color(0xff003A68);
+  static const brand50 = Color(0xffE0E4FF);
+  static const brand200 = Color(0xff8793E0);
+  static const brand500 = Color(0xff344BCC);
+  static const brand600 = Color(0xff242F77);
+  static const brand700 = Color(0xff101322);
 
   static const accent50 = Color(0xffFCF0E6);
   static const accent500 = Color(0xffE36600);
