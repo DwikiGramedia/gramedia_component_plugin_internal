@@ -9,9 +9,9 @@ import 'dart:ui';
 class PapyrusColors {
   static const white = Color(0xffFFFFFF);
 
-  static const neutral50 = Color(0xffF1F1F1);
-  static const neutral150 = Color(0xffC1BDBD);
-  static const neutral200 = Color(0xff9D9899);
+  static const neutral50 = Color(0xffF3F2F2);
+  static const neutral150 = Color(0xffE5E3E3);
+  static const neutral200 = Color(0xffBEBBBC);
   static const neutral500 = Color(0xff5A5556);
   static const neutral600 = Color(0xff3B3839);
   static const neutral700 = Color(0xff1E1B1B);
