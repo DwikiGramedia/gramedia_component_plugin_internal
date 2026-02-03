@@ -22,23 +22,27 @@ class PapyrusColors {
   static const brand600 = Color(0xff242F77);
   static const brand700 = Color(0xff101322);
 
-  static const accent50 = Color(0xffFCF0E6);
-  static const accent500 = Color(0xffE36600);
-  static const accent600 = Color(0xffB65200);
-  static const accent700 = Color(0xff883D00);
+  static const accent50 = Color(0xffAAFFFF);
+  static const accent200 = Color(0xff3AD2D5);
+  static const accent500 = Color(0xff039799);
+  static const accent600 = Color(0xff015B5E);
+  static const accent700 = Color(0xff002425);
 
-  static const green50 = Color(0xffEAF3E8);
-  static const green500 = Color(0xff2C8516);
-  static const green600 = Color(0xff236A12);
-  static const green700 = Color(0xff1A500D);
+  static const green50 = Color(0xffE0FFEE);
+  static const green200 = Color(0xff01E078);
+  static const green500 = Color(0xff01AB40);
+  static const green600 = Color(0xff01580B);
+  static const green700 = Color(0xff002700);
 
-  static const yellow50 = Color(0xffFEF4D3);
-  static const yellow500 = Color(0xffE9B926);
-  static const yellow600 = Color(0xff977714);
-  static const yellow700 = Color(0xff644F0E);
+  static const yellow50 = Color(0xffFFFA97);
+  static const yellow200 = Color(0xffFFDD6D);
+  static const yellow500 = Color(0xffF8B804);
+  static const yellow600 = Color(0xffB98903);
+  static const yellow700 = Color(0xff674D03);
 
-  static const red50 = Color(0xffF8E7E9);
-  static const red500 = Color(0xffB91126);
-  static const red600 = Color(0xff940E1E);
-  static const red700 = Color(0xff6F0A17);
+  static const red50 = Color(0xffFFE1E4);
+  static const red200 = Color(0xffFF7885);
+  static const red500 = Color(0xffDF3B52);
+  static const red600 = Color(0xff99002A);
+  static const red700 = Color(0xff480006);
 }

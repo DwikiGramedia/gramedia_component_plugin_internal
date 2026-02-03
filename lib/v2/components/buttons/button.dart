@@ -18,6 +18,7 @@ class PapyrusButton extends StatelessWidget {
     this.iconSize = 20,
     this.borderRadius,
     this.isFullWidth = true,
+    this.height = 44,
   });
 
   final VoidCallback? onTap;
@@ -33,6 +34,7 @@ class PapyrusButton extends StatelessWidget {
   final double iconSize;
   final BorderRadius? borderRadius;
   final bool isFullWidth;
+  final double height;
 
   const PapyrusButton.secondary({
     Key? key,
@@ -47,21 +49,21 @@ class PapyrusButton extends StatelessWidget {
     BorderRadius? borderRadius,
     bool isFullWidth = true,
   }) : this(
-         key: key,
-         onTap: onTap,
-         label: label,
-         isLoading: isLoading,
-         loadingColor: PapyrusColors.brand500,
-         backgroundColor: PapyrusColors.white,
-         textColor: PapyrusColors.neutral700,
-         borderColor: PapyrusColors.neutral150,
-         isDisabled: isDisabled,
-         icon: icon,
-         customIcon: customIcon,
-         iconSize: iconSize,
-         borderRadius: borderRadius,
-         isFullWidth: isFullWidth,
-       );
+          key: key,
+          onTap: onTap,
+          label: label,
+          isLoading: isLoading,
+          loadingColor: PapyrusColors.brand500,
+          backgroundColor: PapyrusColors.white,
+          textColor: PapyrusColors.neutral700,
+          borderColor: PapyrusColors.neutral150,
+          isDisabled: isDisabled,
+          icon: icon,
+          customIcon: customIcon,
+          iconSize: iconSize,
+          borderRadius: borderRadius,
+          isFullWidth: isFullWidth,
+        );
 
   PapyrusButton.tertiery({
     Key? key,
@@ -76,21 +78,21 @@ class PapyrusButton extends StatelessWidget {
     BorderRadius? borderRadius,
     bool isFullWidth = true,
   }) : this(
-         key: key,
-         onTap: onTap,
-         label: label,
-         isLoading: isLoading,
-         loadingColor: PapyrusColors.brand500,
-         backgroundColor: PapyrusColors.white,
-         textColor: PapyrusColors.neutral700,
-         borderColor: PapyrusColors.white.withAlpha(0),
-         isDisabled: isDisabled,
-         icon: icon,
-         customIcon: customIcon,
-         iconSize: iconSize,
-         borderRadius: borderRadius,
-         isFullWidth: isFullWidth,
-       );
+          key: key,
+          onTap: onTap,
+          label: label,
+          isLoading: isLoading,
+          loadingColor: PapyrusColors.brand500,
+          backgroundColor: PapyrusColors.white,
+          textColor: PapyrusColors.neutral700,
+          borderColor: PapyrusColors.white.withAlpha(0),
+          isDisabled: isDisabled,
+          icon: icon,
+          customIcon: customIcon,
+          iconSize: iconSize,
+          borderRadius: borderRadius,
+          isFullWidth: isFullWidth,
+        );
 
   @override
   Widget build(BuildContext context) {
@@ -101,7 +103,7 @@ class PapyrusButton extends StatelessWidget {
 
     return SizedBox(
       width: isFullWidth ? double.infinity : null,
-      height: 44,
+      height: height,
       child: TextButton(
         onPressed: isLoading || isDisabled ? null : onTap,
         style: TextButton.styleFrom(
