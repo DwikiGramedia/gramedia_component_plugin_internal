@@ -137,14 +137,16 @@ class PapyrusButton extends StatelessWidget {
                           ? PapyrusColors.neutral200
                           : textColor ?? PapyrusColors.white,
                     ),
-                  if (customIcon != null)
+                  if (customIcon != null) ...[
                     SizedBox(
                       height: iconSize,
                       width: iconSize,
                       child: customIcon!,
                     ),
-                  if (label != null) ...[
                     const SizedBox(width: 5),
+                  ],
+
+                  if (label != null)
                     AutoSizeText(
                       label!,
                       textAlign: TextAlign.center,
@@ -156,7 +158,6 @@ class PapyrusButton extends StatelessWidget {
                             : textColor ?? PapyrusColors.white,
                       ),
                     ),
-                  ],
                 ],
               ),
       ),
