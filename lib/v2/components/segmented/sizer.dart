@@ -25,7 +25,10 @@ class _SizerState extends State<Sizer> {
     var context = widgetKey.currentContext;
     if (context == null) return;
 
-    var newSize = context.size;
+    final renderObject = context.findRenderObject();
+    if (renderObject is! RenderBox || !renderObject.hasSize) return;
+
+    var newSize = renderObject.size;
     if (oldSize == newSize) return;
 
     oldSize = newSize;
